@@ -1,0 +1,415 @@
+{
+  "schemaVersion": 1,
+  "themeId": "first-date",
+  "mode": "pilot",
+  "frames": [
+    {
+      "role": "a",
+      "state": "idle",
+      "index": 0,
+      "sourcePath": "art/source/first-date/pilot/a-idle-v1.png",
+      "rect": {
+        "x": 222,
+        "y": 15,
+        "width": 241,
+        "height": 619
+      },
+      "pivot": {
+        "x": 119,
+        "y": 611
+      },
+      "scale": 0.31
+    },
+    {
+      "role": "a",
+      "state": "idle",
+      "index": 1,
+      "sourcePath": "art/source/first-date/pilot/a-idle-v1.png",
+      "rect": {
+        "x": 798,
+        "y": 14,
+        "width": 241,
+        "height": 620
+      },
+      "pivot": {
+        "x": 116,
+        "y": 612
+      },
+      "scale": 0.31
+    },
+    {
+      "role": "a",
+      "state": "idle",
+      "index": 2,
+      "sourcePath": "art/source/first-date/pilot/a-idle-v1.png",
+      "rect": {
+        "x": 223,
+        "y": 634,
+        "width": 244,
+        "height": 615
+      },
+      "pivot": {
+        "x": 120,
+        "y": 608
+      },
+      "scale": 0.31
+    },
+    {
+      "role": "a",
+      "state": "idle",
+      "index": 3,
+      "sourcePath": "art/source/first-date/pilot/a-idle-v1.png",
+      "rect": {
+        "x": 797,
+        "y": 636,
+        "width": 243,
+        "height": 613
+      },
+      "pivot": {
+        "x": 117,
+        "y": 606
+      },
+      "scale": 0.31
+    },
+    {
+      "role": "a",
+      "state": "run",
+      "index": 0,
+      "sourcePath": "art/source/first-date/pilot/a-run-v2.png",
+      "rect": {
+        "x": 104,
+        "y": 13,
+        "width": 354,
+        "height": 434
+      },
+      "pivot": {
+        "x": 255,
+        "y": 429
+      },
+      "scale": 0.45
+    },
+    {
+      "role": "a",
+      "state": "run",
+      "index": 1,
+      "sourcePath": "art/source/first-date/pilot/a-run-v2.png",
+      "rect": {
+        "x": 578,
+        "y": 13,
+        "width": 280,
+        "height": 437
+      },
+      "pivot": {
+        "x": 190,
+        "y": 429
+      },
+      "scale": 0.45
+    },
+    {
+      "role": "a",
+      "state": "run",
+      "index": 2,
+      "sourcePath": "art/source/first-date/pilot/a-run-v2.png",
+      "rect": {
+        "x": 929,
+        "y": 13,
+        "width": 326,
+        "height": 435
+      },
+      "pivot": {
+        "x": 221,
+        "y": 429
+      },
+      "scale": 0.45
+    },
+    {
+      "role": "a",
+      "state": "run",
+      "index": 3,
+      "sourcePath": "art/source/first-date/pilot/a-run-v2.png",
+      "rect": {
+        "x": 1381,
+        "y": 10,
+        "width": 369,
+        "height": 416
+      },
+      "pivot": {
+        "x": 232,
+        "y": 432
+      },
+      "scale": 0.45
+    },
+    {
+      "role": "a",
+      "state": "run",
+      "index": 4,
+      "sourcePath": "art/source/first-date/pilot/a-run-opposite-v1.png",
+      "rect": {
+        "x": 103,
+        "y": 2,
+        "width": 481,
+        "height": 625
+      },
+      "pivot": {
+        "x": 323,
+        "y": 624
+      },
+      "scale": 0.31
+    },
+    {
+      "role": "a",
+      "state": "run",
+      "index": 5,
+      "sourcePath": "art/source/first-date/pilot/a-run-opposite-v1.png",
+      "rect": {
+        "x": 734,
+        "y": 4,
+        "width": 367,
+        "height": 630
+      },
+      "pivot": {
+        "x": 267,
+        "y": 622
+      },
+      "scale": 0.31
+    },
+    {
+      "role": "a",
+      "state": "run",
+      "index": 6,
+      "sourcePath": "art/source/first-date/pilot/a-run-opposite-v1.png",
+      "rect": {
+        "x": 135,
+        "y": 632,
+        "width": 395,
+        "height": 578
+      },
+      "pivot": {
+        "x": 307,
+        "y": 603
+      },
+      "scale": 0.31
+    },
+    {
+      "role": "a",
+      "state": "run",
+      "index": 7,
+      "sourcePath": "art/source/first-date/pilot/a-run-v2.png",
+      "rect": {
+        "x": 1367,
+        "y": 447,
+        "width": 342,
+        "height": 418
+      },
+      "pivot": {
+        "x": 227,
+        "y": 433
+      },
+      "scale": 0.45
+    },
+    {
+      "role": "b",
+      "state": "idle",
+      "index": 0,
+      "sourcePath": "art/source/first-date/pilot/b-idle-v1.png",
+      "rect": {
+        "x": 269,
+        "y": 11,
+        "width": 246,
+        "height": 617
+      },
+      "pivot": {
+        "x": 109,
+        "y": 615
+      },
+      "scale": 0.31
+    },
+    {
+      "role": "b",
+      "state": "idle",
+      "index": 1,
+      "sourcePath": "art/source/first-date/pilot/b-idle-v1.png",
+      "rect": {
+        "x": 787,
+        "y": 11,
+        "width": 246,
+        "height": 616
+      },
+      "pivot": {
+        "x": 110,
+        "y": 615
+      },
+      "scale": 0.31
+    },
+    {
+      "role": "b",
+      "state": "idle",
+      "index": 2,
+      "sourcePath": "art/source/first-date/pilot/b-idle-v1.png",
+      "rect": {
+        "x": 267,
+        "y": 628,
+        "width": 252,
+        "height": 619
+      },
+      "pivot": {
+        "x": 113,
+        "y": 614
+      },
+      "scale": 0.31
+    },
+    {
+      "role": "b",
+      "state": "idle",
+      "index": 3,
+      "sourcePath": "art/source/first-date/pilot/b-idle-v1.png",
+      "rect": {
+        "x": 788,
+        "y": 630,
+        "width": 250,
+        "height": 617
+      },
+      "pivot": {
+        "x": 112,
+        "y": 612
+      },
+      "scale": 0.31
+    },
+    {
+      "role": "b",
+      "state": "run",
+      "index": 0,
+      "sourcePath": "art/source/first-date/pilot/b-run-v1.png",
+      "rect": {
+        "x": 113,
+        "y": 13,
+        "width": 327,
+        "height": 426
+      },
+      "pivot": {
+        "x": 189,
+        "y": 429
+      },
+      "scale": 0.45
+    },
+    {
+      "role": "b",
+      "state": "run",
+      "index": 1,
+      "sourcePath": "art/source/first-date/pilot/b-run-v1.png",
+      "rect": {
+        "x": 582,
+        "y": 12,
+        "width": 218,
+        "height": 430
+      },
+      "pivot": {
+        "x": 118,
+        "y": 430
+      },
+      "scale": 0.45
+    },
+    {
+      "role": "b",
+      "state": "run",
+      "index": 2,
+      "sourcePath": "art/source/first-date/pilot/b-run-v1.png",
+      "rect": {
+        "x": 973,
+        "y": 13,
+        "width": 241,
+        "height": 431
+      },
+      "pivot": {
+        "x": 141,
+        "y": 429
+      },
+      "scale": 0.45
+    },
+    {
+      "role": "b",
+      "state": "run",
+      "index": 3,
+      "sourcePath": "art/source/first-date/pilot/b-run-v1.png",
+      "rect": {
+        "x": 1356,
+        "y": 2,
+        "width": 293,
+        "height": 427
+      },
+      "pivot": {
+        "x": 166,
+        "y": 440
+      },
+      "scale": 0.45
+    },
+    {
+      "role": "b",
+      "state": "run",
+      "index": 4,
+      "sourcePath": "art/source/first-date/pilot/b-run-opposite-v2.png",
+      "rect": {
+        "x": 104,
+        "y": 10,
+        "width": 508,
+        "height": 618
+      },
+      "pivot": {
+        "x": 301,
+        "y": 616
+      },
+      "scale": 0.31
+    },
+    {
+      "role": "b",
+      "state": "run",
+      "index": 5,
+      "sourcePath": "art/source/first-date/pilot/b-run-opposite-v2.png",
+      "rect": {
+        "x": 749,
+        "y": 12,
+        "width": 340,
+        "height": 620
+      },
+      "pivot": {
+        "x": 228,
+        "y": 614
+      },
+      "scale": 0.31
+    },
+    {
+      "role": "b",
+      "state": "run",
+      "index": 6,
+      "sourcePath": "art/source/first-date/pilot/b-run-opposite-v2.png",
+      "rect": {
+        "x": 128,
+        "y": 627,
+        "width": 387,
+        "height": 610
+      },
+      "pivot": {
+        "x": 272,
+        "y": 608
+      },
+      "scale": 0.31
+    },
+    {
+      "role": "b",
+      "state": "run",
+      "index": 7,
+      "sourcePath": "art/source/first-date/pilot/b-run-v1.png",
+      "rect": {
+        "x": 1354,
+        "y": 446,
+        "width": 307,
+        "height": 429
+      },
+      "pivot": {
+        "x": 187,
+        "y": 434
+      },
+      "scale": 0.45
+    }
+  ]
+}

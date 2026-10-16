@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Date Run - проверка анимации</title>
+        <link
+            rel="icon"
+            href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext y='50' font-size='50'%3E%F0%9F%92%9E%3C/text%3E%3C/svg%3E"
+        />
+        <style>
+            :root {
+                font:
+                    16px/1.45 system-ui,
+                    sans-serif;
+                color: #172536;
+                background: #eaf2f5;
+            }
+            * {
+                box-sizing: border-box;
+            }
+            body {
+                margin: 0;
+                padding: 24px;
+            }
+            main {
+                max-width: 1120px;
+                margin: auto;
+            }
+            h1 {
+                font-size: clamp(1.4rem, 4vw, 2rem);
+                margin: 0 0 10px;
+            }
+            p {
+                margin: 0 0 16px;
+            }
+            .controls {
+                display: flex;
+                gap: 12px;
+                flex-wrap: wrap;
+                align-items: end;
+                margin-bottom: 16px;
+            }
+            button,
+            select {
+                font: inherit;
+                padding: 8px 12px;
+                border: 1px solid #627989;
+                border-radius: 8px;
+                background: white;
+                color: inherit;
+            }
+            button:focus-visible,
+            select:focus-visible {
+                outline: 3px solid #266ba8;
+                outline-offset: 2px;
+            }
+            label {
+                display: grid;
+                gap: 3px;
+            }
+            #stage {
+                min-height: 450px;
+                overflow-x: auto;
+                background: #fffdf6;
+                border: 2px solid #627989;
+                border-radius: 12px;
+            }
+            #status {
+                min-height: 24px;
+            }
+            .help {
+                font-size: 0.9rem;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <h1>Date Run - пилот анимации</h1>
+            <p>Оба персонажа и все восемь выбранных кадров run по порядку. Линия показывает уровень обуви.</p>
+            <div class="controls">
+                <label
+                    >Анимация
+                    <select id="state">
+                        <option value="run">Бег</option>
+                        <option value="idle">Ожидание</option>
+                    </select></label
+                >
+                <label
+                    >Высота
+                    <select id="size">
+                        <option value="64">64 px</option>
+                        <option value="96">96 px</option>
+                    </select></label
+                >
+                <button id="play" type="button">Пауза</button>
+                <button id="step" type="button">Следующий кадр</button>
+                <button id="retry" type="button" hidden>Повторить загрузку</button>
+            </div>
+            <p id="status" role="status" aria-live="polite">Загрузка пилотного атласа…</p>
+            <div id="stage" aria-label="Динамический просмотр персонажей"></div>
+            <p class="help">
+                Клавиши: пробел - пауза или воспроизведение, стрелка вправо - следующий кадр. При включённом
+                уменьшении движения воспроизведение начинается на паузе.
+            </p>
+        </main>
+        <script type="module" src="/main.ts"></script>
+    </body>
+</html>

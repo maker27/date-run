@@ -1,0 +1,16 @@
+.git
+.work
+node_modules
+dist
+coverage
+.env
+.env.*
+*.tsbuildinfo
+playwright-report
+test-results
+art
+tests
+docs
+deploy
+scripts
+*.log

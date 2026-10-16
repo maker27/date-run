@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    "target": "ES2024",
+    "lib": [
+      "ES2024",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "allowImportingTsExtensions": true,
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact",
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "verbatimModuleSyntax": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "types": [
+      "node",
+      "vitest/globals",
+      "vite/client"
+    ]
+  },
+  "files": [
+    "vite.config.ts",
+    "vitest.config.ts",
+    "vite.assets.config.ts",
+    "vite.test.config.ts",
+    "playwright.config.ts",
+    "vitest.deploy.config.ts",
+    "deploy/render-nginx.ts"
+  ],
+  "include": [
+    "src/**/*.test.ts",
+    "src/**/*.test.tsx",
+    "tests/**/*.ts",
+    "scripts/**/*.ts",
+    "art/preview/**/*.ts"
+  ]
+}

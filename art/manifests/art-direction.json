@@ -1,0 +1,814 @@
+{
+  "schemaVersion": 1,
+  "style": "Original adult 2D cartoon, dark plum outline, restrained cel shading",
+  "facing": 1,
+  "normalizedFrame": {
+    "width": 256,
+    "height": 256,
+    "anchor": {
+      "x": 0.5,
+      "y": 0.88
+    },
+    "targetVisibleHeight": 190
+  },
+  "gameplayPreviewHeights": [
+    64,
+    96
+  ],
+  "prompts": "art/manifests/prompts.json",
+  "themes": {
+    "first-date": {
+      "concept": "art/source/first-date/concepts/pair-v1.png",
+      "thumbnail": "art/source/first-date/concepts/card-v1.png",
+      "roles": {
+        "a": {
+          "invariants": [
+            "wavy dark-brown hair",
+            "navy blazer",
+            "cream shirt",
+            "burgundy tie",
+            "charcoal trousers",
+            "brown lace-up shoes"
+          ],
+          "gift": "flowers"
+        },
+        "b": {
+          "invariants": [
+            "shoulder-length chestnut hair",
+            "coral-red knee-length puff-sleeve dress",
+            "cream belt with square buckle",
+            "red low-heeled shoes"
+          ],
+          "gift": "wrapped box"
+        }
+      }
+    },
+    "retro": {
+      "concept": "art/source/retro/concepts/pair-v1.png",
+      "thumbnail": "art/source/retro/concepts/card-v1.png",
+      "roles": {
+        "a": {
+          "invariants": [
+            "dark pompadour",
+            "black leather jacket",
+            "ivory T-shirt",
+            "cuffed navy jeans",
+            "brown loafers"
+          ],
+          "gift": "record"
+        },
+        "b": {
+          "invariants": [
+            "blonde bob",
+            "coral bow",
+            "mint dress with large cream polka dots",
+            "white socks",
+            "coral flats"
+          ],
+          "gift": "flowers"
+        }
+      }
+    },
+    "winter": {
+      "concept": "art/source/winter/concepts/pair-v1.png",
+      "roles": {
+        "a": {
+          "invariants": [
+            "navy knit hat",
+            "short beard",
+            "teal jacket with cream collar",
+            "burgundy scarf",
+            "navy trousers",
+            "brown boots",
+            "dark mittens"
+          ],
+          "gift": "cocoa"
+        },
+        "b": {
+          "invariants": [
+            "cream knit hat",
+            "brown braids",
+            "coral-orange coat",
+            "mustard scarf",
+            "plum leggings",
+            "cream mittens",
+            "cream-brown boots"
+          ],
+          "gift": "wrapped box"
+        }
+      }
+    }
+  },
+  "pilot": {
+    "themeId": "first-date",
+    "mode": "pilot",
+    "a": {
+      "idle": {
+        "source": "art/source/first-date/pilot/a-idle-v1.png",
+        "columns": 2,
+        "rows": 2,
+        "count": 4,
+        "fps": 8
+      },
+      "run": {
+        "count": 8,
+        "fps": 12,
+        "sources": [
+          {
+            "source": "art/source/first-date/pilot/a-run-v2.png",
+            "columns": 4,
+            "rows": 2,
+            "selectedFrames": [
+              {
+                "sourceIndex": 0,
+                "animationIndex": 0
+              },
+              {
+                "sourceIndex": 1,
+                "animationIndex": 1
+              },
+              {
+                "sourceIndex": 2,
+                "animationIndex": 2
+              },
+              {
+                "sourceIndex": 3,
+                "animationIndex": 3
+              },
+              {
+                "sourceIndex": 7,
+                "animationIndex": 7
+              }
+            ]
+          },
+          {
+            "source": "art/source/first-date/pilot/a-run-opposite-v1.png",
+            "columns": 2,
+            "rows": 2,
+            "selectedFrames": [
+              {
+                "sourceIndex": 0,
+                "animationIndex": 4
+              },
+              {
+                "sourceIndex": 1,
+                "animationIndex": 5
+              },
+              {
+                "sourceIndex": 2,
+                "animationIndex": 6
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "b": {
+      "idle": {
+        "source": "art/source/first-date/pilot/b-idle-v1.png",
+        "columns": 2,
+        "rows": 2,
+        "count": 4,
+        "fps": 8
+      },
+      "run": {
+        "count": 8,
+        "fps": 12,
+        "sources": [
+          {
+            "source": "art/source/first-date/pilot/b-run-v1.png",
+            "columns": 4,
+            "rows": 2,
+            "selectedFrames": [
+              {
+                "sourceIndex": 0,
+                "animationIndex": 0
+              },
+              {
+                "sourceIndex": 1,
+                "animationIndex": 1
+              },
+              {
+                "sourceIndex": 2,
+                "animationIndex": 2
+              },
+              {
+                "sourceIndex": 3,
+                "animationIndex": 3
+              },
+              {
+                "sourceIndex": 7,
+                "animationIndex": 7
+              }
+            ]
+          },
+          {
+            "source": "art/source/first-date/pilot/b-run-opposite-v2.png",
+            "columns": 2,
+            "rows": 2,
+            "selectedFrames": [
+              {
+                "sourceIndex": 0,
+                "animationIndex": 4
+              },
+              {
+                "sourceIndex": 1,
+                "animationIndex": 5
+              },
+              {
+                "sourceIndex": 2,
+                "animationIndex": 6
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "status": "static-review-passed",
+    "dynamicPreviewRequired": true
+  },
+  "release": {
+    "retro": {
+      "themeId": "retro",
+      "mode": "release",
+      "concept": "art/source/retro/concepts/pair-v1.png",
+      "roles": {
+        "a": {
+          "idle": {
+            "source": "art/source/retro/frames/a-idle-v1.png",
+            "selectedFrames": [
+              {
+                "sourceIndex": 0,
+                "animationIndex": 0
+              },
+              {
+                "sourceIndex": 1,
+                "animationIndex": 1
+              },
+              {
+                "sourceIndex": 2,
+                "animationIndex": 2
+              },
+              {
+                "sourceIndex": 3,
+                "animationIndex": 3
+              }
+            ]
+          },
+          "run": {
+            "sources": [
+              {
+                "source": "art/source/retro/frames/a-run-v1.png",
+                "selectedFrames": [
+                  {
+                    "sourceIndex": 0,
+                    "animationIndex": 0
+                  },
+                  {
+                    "sourceIndex": 1,
+                    "animationIndex": 1
+                  },
+                  {
+                    "sourceIndex": 2,
+                    "animationIndex": 2
+                  },
+                  {
+                    "sourceIndex": 3,
+                    "animationIndex": 3
+                  },
+                  {
+                    "sourceIndex": 7,
+                    "animationIndex": 7
+                  }
+                ]
+              },
+              {
+                "source": "art/source/retro/frames/a-run-opposite-v1.png",
+                "selectedFrames": [
+                  {
+                    "sourceIndex": 0,
+                    "animationIndex": 4
+                  },
+                  {
+                    "sourceIndex": 1,
+                    "animationIndex": 5
+                  },
+                  {
+                    "sourceIndex": 2,
+                    "animationIndex": 6
+                  }
+                ]
+              }
+            ]
+          },
+          "extra": {
+            "source": "art/source/retro/frames/a-extra-v2.png",
+            "selectedFrames": {
+              "jump": [
+                {
+                  "sourceIndex": 0,
+                  "animationIndex": 0
+                }
+              ],
+              "fall": [
+                {
+                  "sourceIndex": 1,
+                  "animationIndex": 0
+                }
+              ],
+              "land": [
+                {
+                  "sourceIndex": 2,
+                  "animationIndex": 0
+                },
+                {
+                  "sourceIndex": 3,
+                  "animationIndex": 1
+                }
+              ],
+              "interact": [
+                {
+                  "sourceIndex": 4,
+                  "animationIndex": 0
+                },
+                {
+                  "sourceIndex": 5,
+                  "animationIndex": 1
+                },
+                {
+                  "sourceIndex": 6,
+                  "animationIndex": 2
+                },
+                {
+                  "sourceIndex": 7,
+                  "animationIndex": 3
+                }
+              ],
+              "happy": [
+                {
+                  "sourceIndex": 8,
+                  "animationIndex": 0
+                },
+                {
+                  "sourceIndex": 9,
+                  "animationIndex": 1
+                },
+                {
+                  "sourceIndex": 10,
+                  "animationIndex": 2
+                },
+                {
+                  "sourceIndex": 11,
+                  "animationIndex": 3
+                },
+                {
+                  "sourceIndex": 12,
+                  "animationIndex": 4
+                },
+                {
+                  "sourceIndex": 13,
+                  "animationIndex": 5
+                }
+              ]
+            }
+          }
+        },
+        "b": {
+          "idle": {
+            "source": "art/source/retro/frames/b-idle-v2.png",
+            "selectedFrames": [
+              {
+                "sourceIndex": 0,
+                "animationIndex": 0
+              },
+              {
+                "sourceIndex": 1,
+                "animationIndex": 1
+              },
+              {
+                "sourceIndex": 2,
+                "animationIndex": 2
+              },
+              {
+                "sourceIndex": 3,
+                "animationIndex": 3
+              }
+            ]
+          },
+          "run": {
+            "source": "art/source/retro/frames/b-run-v1.png",
+            "selectedFrames": [
+              {
+                "sourceIndex": 0,
+                "animationIndex": 0
+              },
+              {
+                "sourceIndex": 1,
+                "animationIndex": 1
+              },
+              {
+                "sourceIndex": 2,
+                "animationIndex": 2
+              },
+              {
+                "sourceIndex": 3,
+                "animationIndex": 3
+              },
+              {
+                "sourceIndex": 4,
+                "animationIndex": 4
+              },
+              {
+                "sourceIndex": 5,
+                "animationIndex": 5
+              },
+              {
+                "sourceIndex": 6,
+                "animationIndex": 6
+              },
+              {
+                "sourceIndex": 7,
+                "animationIndex": 7
+              }
+            ]
+          },
+          "extra": {
+            "source": "art/source/retro/frames/b-extra-v2.png",
+            "selectedFrames": {
+              "jump": [
+                {
+                  "sourceIndex": 0,
+                  "animationIndex": 0
+                }
+              ],
+              "fall": [
+                {
+                  "sourceIndex": 1,
+                  "animationIndex": 0
+                }
+              ],
+              "land": [
+                {
+                  "sourceIndex": 2,
+                  "animationIndex": 0
+                },
+                {
+                  "sourceIndex": 3,
+                  "animationIndex": 1
+                }
+              ],
+              "interact": [
+                {
+                  "sourceIndex": 4,
+                  "animationIndex": 0
+                },
+                {
+                  "sourceIndex": 5,
+                  "animationIndex": 1
+                },
+                {
+                  "sourceIndex": 6,
+                  "animationIndex": 2
+                },
+                {
+                  "sourceIndex": 7,
+                  "animationIndex": 3
+                }
+              ],
+              "happy": [
+                {
+                  "sourceIndex": 8,
+                  "animationIndex": 0
+                },
+                {
+                  "sourceIndex": 9,
+                  "animationIndex": 1
+                },
+                {
+                  "sourceIndex": 10,
+                  "animationIndex": 2
+                },
+                {
+                  "sourceIndex": 11,
+                  "animationIndex": 3
+                },
+                {
+                  "sourceIndex": 12,
+                  "animationIndex": 4
+                },
+                {
+                  "sourceIndex": 13,
+                  "animationIndex": 5
+                }
+              ]
+            }
+          }
+        }
+      },
+      "art": {
+        "background": "art/source/retro/background/cafe-v1.png",
+        "props": "art/source/retro/props/props-v2.png",
+        "selectedProps": {
+          "giftA": 0,
+          "giftB": 1,
+          "finish": 2,
+          "gateClosed": 3,
+          "gateOpen": 4,
+          "plateIdle": 5,
+          "plateActive": 6
+        }
+      }
+    },
+    "winter": {
+      "themeId": "winter",
+      "mode": "release",
+      "concept": "art/source/winter/concepts/pair-v1.png",
+      "roles": {
+        "a": {
+          "idle": {
+            "source": "art/source/winter/frames/a-idle-v1.png",
+            "selectedFrames": [
+              {
+                "sourceIndex": 0,
+                "animationIndex": 0
+              },
+              {
+                "sourceIndex": 1,
+                "animationIndex": 1
+              },
+              {
+                "sourceIndex": 2,
+                "animationIndex": 2
+              },
+              {
+                "sourceIndex": 3,
+                "animationIndex": 3
+              }
+            ]
+          },
+          "run": {
+            "sources": [
+              {
+                "source": "art/source/winter/frames/a-run-v1.png",
+                "selectedFrames": [
+                  {
+                    "sourceIndex": 0,
+                    "animationIndex": 0
+                  },
+                  {
+                    "sourceIndex": 1,
+                    "animationIndex": 1
+                  },
+                  {
+                    "sourceIndex": 2,
+                    "animationIndex": 2
+                  },
+                  {
+                    "sourceIndex": 3,
+                    "animationIndex": 3
+                  }
+                ]
+              },
+              {
+                "source": "art/source/winter/frames/a-run-opposite-v1.png",
+                "selectedFrames": [
+                  {
+                    "sourceIndex": 0,
+                    "animationIndex": 4
+                  },
+                  {
+                    "sourceIndex": 1,
+                    "animationIndex": 5
+                  },
+                  {
+                    "sourceIndex": 2,
+                    "animationIndex": 6
+                  },
+                  {
+                    "sourceIndex": 3,
+                    "animationIndex": 7
+                  }
+                ]
+              }
+            ]
+          },
+          "extra": {
+            "source": "art/source/winter/frames/a-extra-v1.png",
+            "selectedFrames": {
+              "jump": [
+                {
+                  "sourceIndex": 0,
+                  "animationIndex": 0
+                }
+              ],
+              "fall": [
+                {
+                  "sourceIndex": 1,
+                  "animationIndex": 0
+                }
+              ],
+              "land": [
+                {
+                  "sourceIndex": 2,
+                  "animationIndex": 0
+                },
+                {
+                  "sourceIndex": 3,
+                  "animationIndex": 1
+                }
+              ],
+              "interact": [
+                {
+                  "sourceIndex": 4,
+                  "animationIndex": 0
+                },
+                {
+                  "sourceIndex": 5,
+                  "animationIndex": 1
+                },
+                {
+                  "sourceIndex": 6,
+                  "animationIndex": 2
+                },
+                {
+                  "sourceIndex": 7,
+                  "animationIndex": 3
+                }
+              ],
+              "happy": [
+                {
+                  "sourceIndex": 8,
+                  "animationIndex": 0
+                },
+                {
+                  "sourceIndex": 9,
+                  "animationIndex": 1
+                },
+                {
+                  "sourceIndex": 10,
+                  "animationIndex": 2
+                },
+                {
+                  "sourceIndex": 11,
+                  "animationIndex": 3
+                },
+                {
+                  "sourceIndex": 12,
+                  "animationIndex": 4
+                },
+                {
+                  "sourceIndex": 13,
+                  "animationIndex": 5
+                }
+              ]
+            }
+          }
+        },
+        "b": {
+          "idle": {
+            "source": "art/source/winter/frames/b-idle-v1.png",
+            "selectedFrames": [
+              {
+                "sourceIndex": 0,
+                "animationIndex": 0
+              },
+              {
+                "sourceIndex": 1,
+                "animationIndex": 1
+              },
+              {
+                "sourceIndex": 2,
+                "animationIndex": 2
+              },
+              {
+                "sourceIndex": 3,
+                "animationIndex": 3
+              }
+            ]
+          },
+          "run": {
+            "source": "art/source/winter/frames/b-run-v1.png",
+            "selectedFrames": [
+              {
+                "sourceIndex": 0,
+                "animationIndex": 0
+              },
+              {
+                "sourceIndex": 1,
+                "animationIndex": 1
+              },
+              {
+                "sourceIndex": 2,
+                "animationIndex": 2
+              },
+              {
+                "sourceIndex": 3,
+                "animationIndex": 3
+              },
+              {
+                "sourceIndex": 4,
+                "animationIndex": 4
+              },
+              {
+                "sourceIndex": 5,
+                "animationIndex": 5
+              },
+              {
+                "sourceIndex": 6,
+                "animationIndex": 6
+              },
+              {
+                "sourceIndex": 7,
+                "animationIndex": 7
+              }
+            ]
+          },
+          "extra": {
+            "source": "art/source/winter/frames/b-extra-v1.png",
+            "selectedFrames": {
+              "jump": [
+                {
+                  "sourceIndex": 0,
+                  "animationIndex": 0
+                }
+              ],
+              "fall": [
+                {
+                  "sourceIndex": 1,
+                  "animationIndex": 0
+                }
+              ],
+              "land": [
+                {
+                  "sourceIndex": 2,
+                  "animationIndex": 0
+                },
+                {
+                  "sourceIndex": 3,
+                  "animationIndex": 1
+                }
+              ],
+              "interact": [
+                {
+                  "sourceIndex": 4,
+                  "animationIndex": 0
+                },
+                {
+                  "sourceIndex": 5,
+                  "animationIndex": 1
+                },
+                {
+                  "sourceIndex": 6,
+                  "animationIndex": 2
+                },
+                {
+                  "sourceIndex": 7,
+                  "animationIndex": 3
+                }
+              ],
+              "happy": [
+                {
+                  "sourceIndex": 8,
+                  "animationIndex": 0
+                },
+                {
+                  "sourceIndex": 9,
+                  "animationIndex": 1
+                },
+                {
+                  "sourceIndex": 10,
+                  "animationIndex": 2
+                },
+                {
+                  "sourceIndex": 11,
+                  "animationIndex": 3
+                },
+                {
+                  "sourceIndex": 12,
+                  "animationIndex": 4
+                },
+                {
+                  "sourceIndex": 13,
+                  "animationIndex": 5
+                }
+              ]
+            }
+          }
+        }
+      },
+      "art": {
+        "background": "art/source/winter/background/park-v1.png",
+        "props": "art/source/winter/props/props-v1.png",
+        "selectedProps": {
+          "giftA": 0,
+          "giftB": 1,
+          "finish": 2,
+          "gateClosed": 3,
+          "gateOpen": 4,
+          "plateIdle": 5,
+          "plateActive": 6
+        }
+      }
+    }
+  }
+}

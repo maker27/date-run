@@ -1,0 +1,16 @@
+location = /date-run {
+    absolute_redirect off;
+    return 308 /date-run/$is_args$args;
+}
+
+location ^~ /date-run/ {
+    proxy_pass http://127.0.0.1:HOST_PORT;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection $date_run_connection_upgrade;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-Proto $scheme;
+    proxy_read_timeout 60s;
+    proxy_send_timeout 60s;
+}

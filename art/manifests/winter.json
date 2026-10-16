@@ -1,0 +1,973 @@
+{
+  "schemaVersion": 1,
+  "themeId": "winter",
+  "mode": "release",
+  "frames": [
+    {
+      "role": "a",
+      "state": "idle",
+      "index": 0,
+      "sourcePath": "art/source/winter/frames/a-idle-v1.png",
+      "rect": {
+        "x": 243,
+        "y": 8,
+        "width": 256,
+        "height": 621
+      },
+      "pivot": {
+        "x": 126,
+        "y": 619
+      },
+      "scale": 0.31
+    },
+    {
+      "role": "a",
+      "state": "idle",
+      "index": 1,
+      "sourcePath": "art/source/winter/frames/a-idle-v1.png",
+      "rect": {
+        "x": 784,
+        "y": 10,
+        "width": 253,
+        "height": 619
+      },
+      "pivot": {
+        "x": 121,
+        "y": 617
+      },
+      "scale": 0.31
+    },
+    {
+      "role": "a",
+      "state": "idle",
+      "index": 2,
+      "sourcePath": "art/source/winter/frames/a-idle-v1.png",
+      "rect": {
+        "x": 240,
+        "y": 640,
+        "width": 273,
+        "height": 611
+      },
+      "pivot": {
+        "x": 130,
+        "y": 609
+      },
+      "scale": 0.31
+    },
+    {
+      "role": "a",
+      "state": "idle",
+      "index": 3,
+      "sourcePath": "art/source/winter/frames/a-idle-v1.png",
+      "rect": {
+        "x": 780,
+        "y": 635,
+        "width": 270,
+        "height": 616
+      },
+      "pivot": {
+        "x": 128,
+        "y": 614
+      },
+      "scale": 0.31
+    },
+    {
+      "role": "a",
+      "state": "run",
+      "index": 0,
+      "sourcePath": "art/source/winter/frames/a-run-v1.png",
+      "rect": {
+        "x": 62,
+        "y": 15,
+        "width": 353,
+        "height": 424
+      },
+      "pivot": {
+        "x": 180,
+        "y": 422
+      },
+      "scale": 0.46
+    },
+    {
+      "role": "a",
+      "state": "run",
+      "index": 1,
+      "sourcePath": "art/source/winter/frames/a-run-v1.png",
+      "rect": {
+        "x": 498,
+        "y": 12,
+        "width": 297,
+        "height": 433
+      },
+      "pivot": {
+        "x": 174,
+        "y": 431
+      },
+      "scale": 0.46
+    },
+    {
+      "role": "a",
+      "state": "run",
+      "index": 2,
+      "sourcePath": "art/source/winter/frames/a-run-v1.png",
+      "rect": {
+        "x": 915,
+        "y": 12,
+        "width": 295,
+        "height": 433
+      },
+      "pivot": {
+        "x": 159,
+        "y": 431
+      },
+      "scale": 0.46
+    },
+    {
+      "role": "a",
+      "state": "run",
+      "index": 3,
+      "sourcePath": "art/source/winter/frames/a-run-v1.png",
+      "rect": {
+        "x": 1346,
+        "y": 10,
+        "width": 404,
+        "height": 405
+      },
+      "pivot": {
+        "x": 202,
+        "y": 403
+      },
+      "scale": 0.46
+    },
+    {
+      "role": "a",
+      "state": "run",
+      "index": 4,
+      "sourcePath": "art/source/winter/frames/a-run-opposite-v1.png",
+      "rect": {
+        "x": 123,
+        "y": 20,
+        "width": 529,
+        "height": 548
+      },
+      "pivot": {
+        "x": 264,
+        "y": 546
+      },
+      "scale": 0.36
+    },
+    {
+      "role": "a",
+      "state": "run",
+      "index": 5,
+      "sourcePath": "art/source/winter/frames/a-run-opposite-v1.png",
+      "rect": {
+        "x": 812,
+        "y": 21,
+        "width": 401,
+        "height": 551
+      },
+      "pivot": {
+        "x": 239,
+        "y": 549
+      },
+      "scale": 0.36
+    },
+    {
+      "role": "a",
+      "state": "run",
+      "index": 6,
+      "sourcePath": "art/source/winter/frames/a-run-opposite-v1.png",
+      "rect": {
+        "x": 134,
+        "y": 581,
+        "width": 418,
+        "height": 533
+      },
+      "pivot": {
+        "x": 245,
+        "y": 531
+      },
+      "scale": 0.36
+    },
+    {
+      "role": "a",
+      "state": "run",
+      "index": 7,
+      "sourcePath": "art/source/winter/frames/a-run-opposite-v1.png",
+      "rect": {
+        "x": 779,
+        "y": 586,
+        "width": 563,
+        "height": 503
+      },
+      "pivot": {
+        "x": 282,
+        "y": 501
+      },
+      "scale": 0.36
+    },
+    {
+      "role": "a",
+      "state": "jump",
+      "index": 0,
+      "sourcePath": "art/source/winter/frames/a-extra-v1.png",
+      "rect": {
+        "x": 71,
+        "y": 5,
+        "width": 211,
+        "height": 282
+      },
+      "pivot": {
+        "x": 109,
+        "y": 280
+      },
+      "scale": 0.64
+    },
+    {
+      "role": "a",
+      "state": "fall",
+      "index": 0,
+      "sourcePath": "art/source/winter/frames/a-extra-v1.png",
+      "rect": {
+        "x": 350,
+        "y": 8,
+        "width": 247,
+        "height": 314
+      },
+      "pivot": {
+        "x": 119,
+        "y": 312
+      },
+      "scale": 0.64
+    },
+    {
+      "role": "a",
+      "state": "land",
+      "index": 0,
+      "sourcePath": "art/source/winter/frames/a-extra-v1.png",
+      "rect": {
+        "x": 700,
+        "y": 99,
+        "width": 173,
+        "height": 224
+      },
+      "pivot": {
+        "x": 83,
+        "y": 222
+      },
+      "scale": 0.64
+    },
+    {
+      "role": "a",
+      "state": "land",
+      "index": 1,
+      "sourcePath": "art/source/winter/frames/a-extra-v1.png",
+      "rect": {
+        "x": 1007,
+        "y": 20,
+        "width": 183,
+        "height": 300
+      },
+      "pivot": {
+        "x": 84,
+        "y": 298
+      },
+      "scale": 0.64
+    },
+    {
+      "role": "a",
+      "state": "interact",
+      "index": 0,
+      "sourcePath": "art/source/winter/frames/a-extra-v1.png",
+      "rect": {
+        "x": 71,
+        "y": 325,
+        "width": 218,
+        "height": 302
+      },
+      "pivot": {
+        "x": 83,
+        "y": 300
+      },
+      "scale": 0.64
+    },
+    {
+      "role": "a",
+      "state": "interact",
+      "index": 1,
+      "sourcePath": "art/source/winter/frames/a-extra-v1.png",
+      "rect": {
+        "x": 374,
+        "y": 329,
+        "width": 256,
+        "height": 296
+      },
+      "pivot": {
+        "x": 109,
+        "y": 294
+      },
+      "scale": 0.64
+    },
+    {
+      "role": "a",
+      "state": "interact",
+      "index": 2,
+      "sourcePath": "art/source/winter/frames/a-extra-v1.png",
+      "rect": {
+        "x": 693,
+        "y": 331,
+        "width": 215,
+        "height": 294
+      },
+      "pivot": {
+        "x": 94,
+        "y": 292
+      },
+      "scale": 0.64
+    },
+    {
+      "role": "a",
+      "state": "interact",
+      "index": 3,
+      "sourcePath": "art/source/winter/frames/a-extra-v1.png",
+      "rect": {
+        "x": 1013,
+        "y": 329,
+        "width": 162,
+        "height": 297
+      },
+      "pivot": {
+        "x": 77,
+        "y": 295
+      },
+      "scale": 0.64
+    },
+    {
+      "role": "a",
+      "state": "happy",
+      "index": 0,
+      "sourcePath": "art/source/winter/frames/a-extra-v1.png",
+      "rect": {
+        "x": 84,
+        "y": 638,
+        "width": 143,
+        "height": 301
+      },
+      "pivot": {
+        "x": 68,
+        "y": 299
+      },
+      "scale": 0.64
+    },
+    {
+      "role": "a",
+      "state": "happy",
+      "index": 1,
+      "sourcePath": "art/source/winter/frames/a-extra-v1.png",
+      "rect": {
+        "x": 351,
+        "y": 638,
+        "width": 254,
+        "height": 301
+      },
+      "pivot": {
+        "x": 123,
+        "y": 299
+      },
+      "scale": 0.64
+    },
+    {
+      "role": "a",
+      "state": "happy",
+      "index": 2,
+      "sourcePath": "art/source/winter/frames/a-extra-v1.png",
+      "rect": {
+        "x": 695,
+        "y": 630,
+        "width": 190,
+        "height": 310
+      },
+      "pivot": {
+        "x": 89,
+        "y": 308
+      },
+      "scale": 0.64
+    },
+    {
+      "role": "a",
+      "state": "happy",
+      "index": 3,
+      "sourcePath": "art/source/winter/frames/a-extra-v1.png",
+      "rect": {
+        "x": 1007,
+        "y": 638,
+        "width": 184,
+        "height": 301
+      },
+      "pivot": {
+        "x": 87,
+        "y": 299
+      },
+      "scale": 0.64
+    },
+    {
+      "role": "a",
+      "state": "happy",
+      "index": 4,
+      "sourcePath": "art/source/winter/frames/a-extra-v1.png",
+      "rect": {
+        "x": 70,
+        "y": 949,
+        "width": 169,
+        "height": 301
+      },
+      "pivot": {
+        "x": 85,
+        "y": 299
+      },
+      "scale": 0.64
+    },
+    {
+      "role": "a",
+      "state": "happy",
+      "index": 5,
+      "sourcePath": "art/source/winter/frames/a-extra-v1.png",
+      "rect": {
+        "x": 409,
+        "y": 948,
+        "width": 137,
+        "height": 299
+      },
+      "pivot": {
+        "x": 65,
+        "y": 297
+      },
+      "scale": 0.64
+    },
+    {
+      "role": "b",
+      "state": "idle",
+      "index": 0,
+      "sourcePath": "art/source/winter/frames/b-idle-v1.png",
+      "rect": {
+        "x": 289,
+        "y": 29,
+        "width": 237,
+        "height": 590
+      },
+      "pivot": {
+        "x": 113,
+        "y": 588
+      },
+      "scale": 0.325
+    },
+    {
+      "role": "b",
+      "state": "idle",
+      "index": 1,
+      "sourcePath": "art/source/winter/frames/b-idle-v1.png",
+      "rect": {
+        "x": 758,
+        "y": 29,
+        "width": 247,
+        "height": 591
+      },
+      "pivot": {
+        "x": 121,
+        "y": 589
+      },
+      "scale": 0.325
+    },
+    {
+      "role": "b",
+      "state": "idle",
+      "index": 2,
+      "sourcePath": "art/source/winter/frames/b-idle-v1.png",
+      "rect": {
+        "x": 282,
+        "y": 647,
+        "width": 248,
+        "height": 585
+      },
+      "pivot": {
+        "x": 120,
+        "y": 583
+      },
+      "scale": 0.325
+    },
+    {
+      "role": "b",
+      "state": "idle",
+      "index": 3,
+      "sourcePath": "art/source/winter/frames/b-idle-v1.png",
+      "rect": {
+        "x": 762,
+        "y": 641,
+        "width": 247,
+        "height": 591
+      },
+      "pivot": {
+        "x": 119,
+        "y": 589
+      },
+      "scale": 0.325
+    },
+    {
+      "role": "b",
+      "state": "run",
+      "index": 0,
+      "sourcePath": "art/source/winter/frames/b-run-v1.png",
+      "rect": {
+        "x": 61,
+        "y": 13,
+        "width": 342,
+        "height": 424
+      },
+      "pivot": {
+        "x": 193,
+        "y": 422
+      },
+      "scale": 0.46
+    },
+    {
+      "role": "b",
+      "state": "run",
+      "index": 1,
+      "sourcePath": "art/source/winter/frames/b-run-v1.png",
+      "rect": {
+        "x": 533,
+        "y": 19,
+        "width": 244,
+        "height": 420
+      },
+      "pivot": {
+        "x": 144,
+        "y": 418
+      },
+      "scale": 0.46
+    },
+    {
+      "role": "b",
+      "state": "run",
+      "index": 2,
+      "sourcePath": "art/source/winter/frames/b-run-v1.png",
+      "rect": {
+        "x": 952,
+        "y": 15,
+        "width": 303,
+        "height": 422
+      },
+      "pivot": {
+        "x": 152,
+        "y": 420
+      },
+      "scale": 0.46
+    },
+    {
+      "role": "b",
+      "state": "run",
+      "index": 3,
+      "sourcePath": "art/source/winter/frames/b-run-v1.png",
+      "rect": {
+        "x": 1371,
+        "y": 14,
+        "width": 395,
+        "height": 402
+      },
+      "pivot": {
+        "x": 211,
+        "y": 400
+      },
+      "scale": 0.46
+    },
+    {
+      "role": "b",
+      "state": "run",
+      "index": 4,
+      "sourcePath": "art/source/winter/frames/b-run-v1.png",
+      "rect": {
+        "x": 39,
+        "y": 452,
+        "width": 345,
+        "height": 420
+      },
+      "pivot": {
+        "x": 176,
+        "y": 418
+      },
+      "scale": 0.46
+    },
+    {
+      "role": "b",
+      "state": "run",
+      "index": 5,
+      "sourcePath": "art/source/winter/frames/b-run-v1.png",
+      "rect": {
+        "x": 543,
+        "y": 458,
+        "width": 244,
+        "height": 411
+      },
+      "pivot": {
+        "x": 139,
+        "y": 409
+      },
+      "scale": 0.46
+    },
+    {
+      "role": "b",
+      "state": "run",
+      "index": 6,
+      "sourcePath": "art/source/winter/frames/b-run-v1.png",
+      "rect": {
+        "x": 935,
+        "y": 453,
+        "width": 336,
+        "height": 419
+      },
+      "pivot": {
+        "x": 168,
+        "y": 417
+      },
+      "scale": 0.46
+    },
+    {
+      "role": "b",
+      "state": "run",
+      "index": 7,
+      "sourcePath": "art/source/winter/frames/b-run-v1.png",
+      "rect": {
+        "x": 1382,
+        "y": 452,
+        "width": 378,
+        "height": 405
+      },
+      "pivot": {
+        "x": 196,
+        "y": 403
+      },
+      "scale": 0.46
+    },
+    {
+      "role": "b",
+      "state": "jump",
+      "index": 0,
+      "sourcePath": "art/source/winter/frames/b-extra-v1.png",
+      "rect": {
+        "x": 49,
+        "y": 10,
+        "width": 245,
+        "height": 290
+      },
+      "pivot": {
+        "x": 124,
+        "y": 288
+      },
+      "scale": 0.64
+    },
+    {
+      "role": "b",
+      "state": "fall",
+      "index": 0,
+      "sourcePath": "art/source/winter/frames/b-extra-v1.png",
+      "rect": {
+        "x": 358,
+        "y": 10,
+        "width": 240,
+        "height": 312
+      },
+      "pivot": {
+        "x": 120,
+        "y": 310
+      },
+      "scale": 0.64
+    },
+    {
+      "role": "b",
+      "state": "land",
+      "index": 0,
+      "sourcePath": "art/source/winter/frames/b-extra-v1.png",
+      "rect": {
+        "x": 683,
+        "y": 107,
+        "width": 227,
+        "height": 215
+      },
+      "pivot": {
+        "x": 104,
+        "y": 213
+      },
+      "scale": 0.64
+    },
+    {
+      "role": "b",
+      "state": "land",
+      "index": 1,
+      "sourcePath": "art/source/winter/frames/b-extra-v1.png",
+      "rect": {
+        "x": 1014,
+        "y": 9,
+        "width": 185,
+        "height": 314
+      },
+      "pivot": {
+        "x": 96,
+        "y": 312
+      },
+      "scale": 0.64
+    },
+    {
+      "role": "b",
+      "state": "interact",
+      "index": 0,
+      "sourcePath": "art/source/winter/frames/b-extra-v1.png",
+      "rect": {
+        "x": 76,
+        "y": 329,
+        "width": 224,
+        "height": 307
+      },
+      "pivot": {
+        "x": 89,
+        "y": 305
+      },
+      "scale": 0.64
+    },
+    {
+      "role": "b",
+      "state": "interact",
+      "index": 1,
+      "sourcePath": "art/source/winter/frames/b-extra-v1.png",
+      "rect": {
+        "x": 366,
+        "y": 336,
+        "width": 252,
+        "height": 301
+      },
+      "pivot": {
+        "x": 100,
+        "y": 299
+      },
+      "scale": 0.64
+    },
+    {
+      "role": "b",
+      "state": "interact",
+      "index": 2,
+      "sourcePath": "art/source/winter/frames/b-extra-v1.png",
+      "rect": {
+        "x": 699,
+        "y": 336,
+        "width": 198,
+        "height": 300
+      },
+      "pivot": {
+        "x": 85,
+        "y": 298
+      },
+      "scale": 0.64
+    },
+    {
+      "role": "b",
+      "state": "interact",
+      "index": 3,
+      "sourcePath": "art/source/winter/frames/b-extra-v1.png",
+      "rect": {
+        "x": 1017,
+        "y": 339,
+        "width": 144,
+        "height": 297
+      },
+      "pivot": {
+        "x": 74,
+        "y": 295
+      },
+      "scale": 0.64
+    },
+    {
+      "role": "b",
+      "state": "happy",
+      "index": 0,
+      "sourcePath": "art/source/winter/frames/b-extra-v1.png",
+      "rect": {
+        "x": 87,
+        "y": 646,
+        "width": 147,
+        "height": 302
+      },
+      "pivot": {
+        "x": 72,
+        "y": 300
+      },
+      "scale": 0.64
+    },
+    {
+      "role": "b",
+      "state": "happy",
+      "index": 1,
+      "sourcePath": "art/source/winter/frames/b-extra-v1.png",
+      "rect": {
+        "x": 356,
+        "y": 648,
+        "width": 241,
+        "height": 299
+      },
+      "pivot": {
+        "x": 117,
+        "y": 297
+      },
+      "scale": 0.64
+    },
+    {
+      "role": "b",
+      "state": "happy",
+      "index": 2,
+      "sourcePath": "art/source/winter/frames/b-extra-v1.png",
+      "rect": {
+        "x": 690,
+        "y": 646,
+        "width": 190,
+        "height": 302
+      },
+      "pivot": {
+        "x": 99,
+        "y": 300
+      },
+      "scale": 0.64
+    },
+    {
+      "role": "b",
+      "state": "happy",
+      "index": 3,
+      "sourcePath": "art/source/winter/frames/b-extra-v1.png",
+      "rect": {
+        "x": 1010,
+        "y": 650,
+        "width": 150,
+        "height": 275
+      },
+      "pivot": {
+        "x": 79,
+        "y": 273
+      },
+      "scale": 0.64
+    },
+    {
+      "role": "b",
+      "state": "happy",
+      "index": 4,
+      "sourcePath": "art/source/winter/frames/b-extra-v1.png",
+      "rect": {
+        "x": 70,
+        "y": 961,
+        "width": 148,
+        "height": 290
+      },
+      "pivot": {
+        "x": 78,
+        "y": 288
+      },
+      "scale": 0.64
+    },
+    {
+      "role": "b",
+      "state": "happy",
+      "index": 5,
+      "sourcePath": "art/source/winter/frames/b-extra-v1.png",
+      "rect": {
+        "x": 397,
+        "y": 958,
+        "width": 144,
+        "height": 294
+      },
+      "pivot": {
+        "x": 69,
+        "y": 292
+      },
+      "scale": 0.64
+    }
+  ],
+  "art": {
+    "background": {
+      "sourcePath": "art/source/winter/background/park-v1.png",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 1536,
+        "height": 1024
+      },
+      "scale": 0.6666666666666666
+    },
+    "giftA": {
+      "sourcePath": "art/source/winter/props/props-v1.png",
+      "rect": {
+        "x": 66,
+        "y": 246,
+        "width": 289,
+        "height": 238
+      },
+      "scale": 0.3
+    },
+    "giftB": {
+      "sourcePath": "art/source/winter/props/props-v1.png",
+      "rect": {
+        "x": 426,
+        "y": 218,
+        "width": 276,
+        "height": 281
+      },
+      "scale": 0.3
+    },
+    "finish": {
+      "sourcePath": "art/source/winter/props/props-v1.png",
+      "rect": {
+        "x": 738,
+        "y": 32,
+        "width": 494,
+        "height": 480
+      },
+      "scale": 0.72
+    },
+    "gateClosed": {
+      "sourcePath": "art/source/winter/props/props-v1.png",
+      "rect": {
+        "x": 139,
+        "y": 538,
+        "width": 185,
+        "height": 390
+      },
+      "scale": 0.58
+    },
+    "gateOpen": {
+      "sourcePath": "art/source/winter/props/props-v1.png",
+      "rect": {
+        "x": 516,
+        "y": 540,
+        "width": 219,
+        "height": 388
+      },
+      "scale": 0.58
+    },
+    "plateIdle": {
+      "sourcePath": "art/source/winter/props/props-v1.png",
+      "rect": {
+        "x": 842,
+        "y": 740,
+        "width": 366,
+        "height": 179
+      },
+      "scale": 0.32
+    },
+    "plateActive": {
+      "sourcePath": "art/source/winter/props/props-v1.png",
+      "rect": {
+        "x": 52,
+        "y": 1017,
+        "width": 374,
+        "height": 184
+      },
+      "scale": 0.32
+    }
+  }
+}

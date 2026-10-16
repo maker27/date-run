@@ -1,0 +1,515 @@
+{
+  "schemaVersion": 1,
+  "themeId": "first-date",
+  "mode": "release",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.88
+  },
+  "pages": [
+    {
+      "imageKey": "atlas-0",
+      "width": 1808,
+      "height": 1808
+    },
+    {
+      "imageKey": "atlas-1",
+      "width": 1808,
+      "height": 260
+    }
+  ],
+  "frames": {
+    "a-idle-0": {
+      "imageKey": "atlas-0",
+      "x": 2,
+      "y": 2,
+      "width": 256,
+      "height": 256
+    },
+    "a-idle-1": {
+      "imageKey": "atlas-0",
+      "x": 260,
+      "y": 2,
+      "width": 256,
+      "height": 256
+    },
+    "a-idle-2": {
+      "imageKey": "atlas-0",
+      "x": 518,
+      "y": 2,
+      "width": 256,
+      "height": 256
+    },
+    "a-idle-3": {
+      "imageKey": "atlas-0",
+      "x": 776,
+      "y": 2,
+      "width": 256,
+      "height": 256
+    },
+    "a-run-0": {
+      "imageKey": "atlas-0",
+      "x": 1034,
+      "y": 2,
+      "width": 256,
+      "height": 256
+    },
+    "a-run-1": {
+      "imageKey": "atlas-0",
+      "x": 1292,
+      "y": 2,
+      "width": 256,
+      "height": 256
+    },
+    "a-run-2": {
+      "imageKey": "atlas-0",
+      "x": 1550,
+      "y": 2,
+      "width": 256,
+      "height": 256
+    },
+    "a-run-3": {
+      "imageKey": "atlas-0",
+      "x": 2,
+      "y": 260,
+      "width": 256,
+      "height": 256
+    },
+    "a-run-4": {
+      "imageKey": "atlas-0",
+      "x": 260,
+      "y": 260,
+      "width": 256,
+      "height": 256
+    },
+    "a-run-5": {
+      "imageKey": "atlas-0",
+      "x": 518,
+      "y": 260,
+      "width": 256,
+      "height": 256
+    },
+    "a-run-6": {
+      "imageKey": "atlas-0",
+      "x": 776,
+      "y": 260,
+      "width": 256,
+      "height": 256
+    },
+    "a-run-7": {
+      "imageKey": "atlas-0",
+      "x": 1034,
+      "y": 260,
+      "width": 256,
+      "height": 256
+    },
+    "a-jump-0": {
+      "imageKey": "atlas-0",
+      "x": 1292,
+      "y": 260,
+      "width": 256,
+      "height": 256
+    },
+    "a-fall-0": {
+      "imageKey": "atlas-0",
+      "x": 1550,
+      "y": 260,
+      "width": 256,
+      "height": 256
+    },
+    "a-land-0": {
+      "imageKey": "atlas-0",
+      "x": 2,
+      "y": 518,
+      "width": 256,
+      "height": 256
+    },
+    "a-land-1": {
+      "imageKey": "atlas-0",
+      "x": 260,
+      "y": 518,
+      "width": 256,
+      "height": 256
+    },
+    "a-interact-0": {
+      "imageKey": "atlas-0",
+      "x": 518,
+      "y": 518,
+      "width": 256,
+      "height": 256
+    },
+    "a-interact-1": {
+      "imageKey": "atlas-0",
+      "x": 776,
+      "y": 518,
+      "width": 256,
+      "height": 256
+    },
+    "a-interact-2": {
+      "imageKey": "atlas-0",
+      "x": 1034,
+      "y": 518,
+      "width": 256,
+      "height": 256
+    },
+    "a-interact-3": {
+      "imageKey": "atlas-0",
+      "x": 1292,
+      "y": 518,
+      "width": 256,
+      "height": 256
+    },
+    "a-happy-0": {
+      "imageKey": "atlas-0",
+      "x": 1550,
+      "y": 518,
+      "width": 256,
+      "height": 256
+    },
+    "a-happy-1": {
+      "imageKey": "atlas-0",
+      "x": 2,
+      "y": 776,
+      "width": 256,
+      "height": 256
+    },
+    "a-happy-2": {
+      "imageKey": "atlas-0",
+      "x": 260,
+      "y": 776,
+      "width": 256,
+      "height": 256
+    },
+    "a-happy-3": {
+      "imageKey": "atlas-0",
+      "x": 518,
+      "y": 776,
+      "width": 256,
+      "height": 256
+    },
+    "a-happy-4": {
+      "imageKey": "atlas-0",
+      "x": 776,
+      "y": 776,
+      "width": 256,
+      "height": 256
+    },
+    "a-happy-5": {
+      "imageKey": "atlas-0",
+      "x": 1034,
+      "y": 776,
+      "width": 256,
+      "height": 256
+    },
+    "b-idle-0": {
+      "imageKey": "atlas-0",
+      "x": 1292,
+      "y": 776,
+      "width": 256,
+      "height": 256
+    },
+    "b-idle-1": {
+      "imageKey": "atlas-0",
+      "x": 1550,
+      "y": 776,
+      "width": 256,
+      "height": 256
+    },
+    "b-idle-2": {
+      "imageKey": "atlas-0",
+      "x": 2,
+      "y": 1034,
+      "width": 256,
+      "height": 256
+    },
+    "b-idle-3": {
+      "imageKey": "atlas-0",
+      "x": 260,
+      "y": 1034,
+      "width": 256,
+      "height": 256
+    },
+    "b-run-0": {
+      "imageKey": "atlas-0",
+      "x": 518,
+      "y": 1034,
+      "width": 256,
+      "height": 256
+    },
+    "b-run-1": {
+      "imageKey": "atlas-0",
+      "x": 776,
+      "y": 1034,
+      "width": 256,
+      "height": 256
+    },
+    "b-run-2": {
+      "imageKey": "atlas-0",
+      "x": 1034,
+      "y": 1034,
+      "width": 256,
+      "height": 256
+    },
+    "b-run-3": {
+      "imageKey": "atlas-0",
+      "x": 1292,
+      "y": 1034,
+      "width": 256,
+      "height": 256
+    },
+    "b-run-4": {
+      "imageKey": "atlas-0",
+      "x": 1550,
+      "y": 1034,
+      "width": 256,
+      "height": 256
+    },
+    "b-run-5": {
+      "imageKey": "atlas-0",
+      "x": 2,
+      "y": 1292,
+      "width": 256,
+      "height": 256
+    },
+    "b-run-6": {
+      "imageKey": "atlas-0",
+      "x": 260,
+      "y": 1292,
+      "width": 256,
+      "height": 256
+    },
+    "b-run-7": {
+      "imageKey": "atlas-0",
+      "x": 518,
+      "y": 1292,
+      "width": 256,
+      "height": 256
+    },
+    "b-jump-0": {
+      "imageKey": "atlas-0",
+      "x": 776,
+      "y": 1292,
+      "width": 256,
+      "height": 256
+    },
+    "b-fall-0": {
+      "imageKey": "atlas-0",
+      "x": 1034,
+      "y": 1292,
+      "width": 256,
+      "height": 256
+    },
+    "b-land-0": {
+      "imageKey": "atlas-0",
+      "x": 1292,
+      "y": 1292,
+      "width": 256,
+      "height": 256
+    },
+    "b-land-1": {
+      "imageKey": "atlas-0",
+      "x": 1550,
+      "y": 1292,
+      "width": 256,
+      "height": 256
+    },
+    "b-interact-0": {
+      "imageKey": "atlas-0",
+      "x": 2,
+      "y": 1550,
+      "width": 256,
+      "height": 256
+    },
+    "b-interact-1": {
+      "imageKey": "atlas-0",
+      "x": 260,
+      "y": 1550,
+      "width": 256,
+      "height": 256
+    },
+    "b-interact-2": {
+      "imageKey": "atlas-0",
+      "x": 518,
+      "y": 1550,
+      "width": 256,
+      "height": 256
+    },
+    "b-interact-3": {
+      "imageKey": "atlas-0",
+      "x": 776,
+      "y": 1550,
+      "width": 256,
+      "height": 256
+    },
+    "b-happy-0": {
+      "imageKey": "atlas-0",
+      "x": 1034,
+      "y": 1550,
+      "width": 256,
+      "height": 256
+    },
+    "b-happy-1": {
+      "imageKey": "atlas-0",
+      "x": 1292,
+      "y": 1550,
+      "width": 256,
+      "height": 256
+    },
+    "b-happy-2": {
+      "imageKey": "atlas-0",
+      "x": 1550,
+      "y": 1550,
+      "width": 256,
+      "height": 256
+    },
+    "b-happy-3": {
+      "imageKey": "atlas-1",
+      "x": 2,
+      "y": 2,
+      "width": 256,
+      "height": 256
+    },
+    "b-happy-4": {
+      "imageKey": "atlas-1",
+      "x": 260,
+      "y": 2,
+      "width": 256,
+      "height": 256
+    },
+    "b-happy-5": {
+      "imageKey": "atlas-1",
+      "x": 518,
+      "y": 2,
+      "width": 256,
+      "height": 256
+    }
+  },
+  "art": {
+    "background": {
+      "imageKey": "art-background",
+      "width": 1024,
+      "height": 683
+    },
+    "finish": {
+      "imageKey": "art-finish",
+      "width": 356,
+      "height": 404
+    },
+    "gateClosed": {
+      "imageKey": "art-gate-closed",
+      "width": 86,
+      "height": 232
+    },
+    "gateOpen": {
+      "imageKey": "art-gate-open",
+      "width": 87,
+      "height": 177
+    },
+    "plateIdle": {
+      "imageKey": "art-plate-idle",
+      "width": 145,
+      "height": 63
+    },
+    "plateActive": {
+      "imageKey": "art-plate-active",
+      "width": 142,
+      "height": 64
+    },
+    "giftA": {
+      "imageKey": "art-gift-a",
+      "width": 81,
+      "height": 108
+    },
+    "giftB": {
+      "imageKey": "art-gift-b",
+      "width": 81,
+      "height": 86
+    }
+  },
+  "animations": {
+    "a": {
+      "idle": [
+        "a-idle-0",
+        "a-idle-1",
+        "a-idle-2",
+        "a-idle-3"
+      ],
+      "run": [
+        "a-run-0",
+        "a-run-1",
+        "a-run-2",
+        "a-run-3",
+        "a-run-4",
+        "a-run-5",
+        "a-run-6",
+        "a-run-7"
+      ],
+      "jump": [
+        "a-jump-0"
+      ],
+      "fall": [
+        "a-fall-0"
+      ],
+      "land": [
+        "a-land-0",
+        "a-land-1"
+      ],
+      "interact": [
+        "a-interact-0",
+        "a-interact-1",
+        "a-interact-2",
+        "a-interact-3"
+      ],
+      "happy": [
+        "a-happy-0",
+        "a-happy-1",
+        "a-happy-2",
+        "a-happy-3",
+        "a-happy-4",
+        "a-happy-5"
+      ]
+    },
+    "b": {
+      "idle": [
+        "b-idle-0",
+        "b-idle-1",
+        "b-idle-2",
+        "b-idle-3"
+      ],
+      "run": [
+        "b-run-0",
+        "b-run-1",
+        "b-run-2",
+        "b-run-3",
+        "b-run-4",
+        "b-run-5",
+        "b-run-6",
+        "b-run-7"
+      ],
+      "jump": [
+        "b-jump-0"
+      ],
+      "fall": [
+        "b-fall-0"
+      ],
+      "land": [
+        "b-land-0",
+        "b-land-1"
+      ],
+      "interact": [
+        "b-interact-0",
+        "b-interact-1",
+        "b-interact-2",
+        "b-interact-3"
+      ],
+      "happy": [
+        "b-happy-0",
+        "b-happy-1",
+        "b-happy-2",
+        "b-happy-3",
+        "b-happy-4",
+        "b-happy-5"
+      ]
+    }
+  }
+}

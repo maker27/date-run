@@ -1,0 +1,973 @@
+{
+  "schemaVersion": 1,
+  "themeId": "retro",
+  "mode": "release",
+  "frames": [
+    {
+      "role": "a",
+      "state": "idle",
+      "index": 0,
+      "sourcePath": "art/source/retro/frames/a-idle-v1.png",
+      "rect": {
+        "x": 232,
+        "y": 10,
+        "width": 249,
+        "height": 616
+      },
+      "pivot": {
+        "x": 124,
+        "y": 615
+      },
+      "scale": 0.31
+    },
+    {
+      "role": "b",
+      "state": "idle",
+      "index": 0,
+      "sourcePath": "art/source/retro/frames/b-idle-v2.png",
+      "rect": {
+        "x": 221,
+        "y": 23,
+        "width": 267,
+        "height": 603
+      },
+      "pivot": {
+        "x": 134,
+        "y": 602
+      },
+      "scale": 0.32
+    },
+    {
+      "role": "a",
+      "state": "idle",
+      "index": 1,
+      "sourcePath": "art/source/retro/frames/a-idle-v1.png",
+      "rect": {
+        "x": 791,
+        "y": 7,
+        "width": 250,
+        "height": 619
+      },
+      "pivot": {
+        "x": 125,
+        "y": 618
+      },
+      "scale": 0.31
+    },
+    {
+      "role": "b",
+      "state": "idle",
+      "index": 1,
+      "sourcePath": "art/source/retro/frames/b-idle-v2.png",
+      "rect": {
+        "x": 793,
+        "y": 22,
+        "width": 269,
+        "height": 604
+      },
+      "pivot": {
+        "x": 134,
+        "y": 603
+      },
+      "scale": 0.32
+    },
+    {
+      "role": "a",
+      "state": "idle",
+      "index": 2,
+      "sourcePath": "art/source/retro/frames/a-idle-v1.png",
+      "rect": {
+        "x": 231,
+        "y": 632,
+        "width": 253,
+        "height": 618
+      },
+      "pivot": {
+        "x": 125,
+        "y": 616
+      },
+      "scale": 0.31
+    },
+    {
+      "role": "b",
+      "state": "idle",
+      "index": 2,
+      "sourcePath": "art/source/retro/frames/b-idle-v2.png",
+      "rect": {
+        "x": 218,
+        "y": 636,
+        "width": 273,
+        "height": 606
+      },
+      "pivot": {
+        "x": 137,
+        "y": 608
+      },
+      "scale": 0.32
+    },
+    {
+      "role": "a",
+      "state": "idle",
+      "index": 3,
+      "sourcePath": "art/source/retro/frames/a-idle-v1.png",
+      "rect": {
+        "x": 789,
+        "y": 632,
+        "width": 255,
+        "height": 618
+      },
+      "pivot": {
+        "x": 127,
+        "y": 616
+      },
+      "scale": 0.31
+    },
+    {
+      "role": "b",
+      "state": "idle",
+      "index": 3,
+      "sourcePath": "art/source/retro/frames/b-idle-v2.png",
+      "rect": {
+        "x": 794,
+        "y": 636,
+        "width": 272,
+        "height": 606
+      },
+      "pivot": {
+        "x": 133,
+        "y": 608
+      },
+      "scale": 0.32
+    },
+    {
+      "role": "a",
+      "state": "run",
+      "index": 0,
+      "sourcePath": "art/source/retro/frames/a-run-v1.png",
+      "rect": {
+        "x": 56,
+        "y": 5,
+        "width": 343,
+        "height": 484
+      },
+      "pivot": {
+        "x": 170,
+        "y": 489
+      },
+      "scale": 0.4
+    },
+    {
+      "role": "a",
+      "state": "run",
+      "index": 1,
+      "sourcePath": "art/source/retro/frames/a-run-v1.png",
+      "rect": {
+        "x": 457,
+        "y": 5,
+        "width": 292,
+        "height": 489
+      },
+      "pivot": {
+        "x": 128,
+        "y": 489
+      },
+      "scale": 0.4
+    },
+    {
+      "role": "a",
+      "state": "run",
+      "index": 2,
+      "sourcePath": "art/source/retro/frames/a-run-v1.png",
+      "rect": {
+        "x": 804,
+        "y": 6,
+        "width": 317,
+        "height": 483
+      },
+      "pivot": {
+        "x": 146,
+        "y": 488
+      },
+      "scale": 0.4
+    },
+    {
+      "role": "a",
+      "state": "run",
+      "index": 3,
+      "sourcePath": "art/source/retro/frames/a-run-v1.png",
+      "rect": {
+        "x": 1185,
+        "y": 6,
+        "width": 330,
+        "height": 454
+      },
+      "pivot": {
+        "x": 165,
+        "y": 488
+      },
+      "scale": 0.4
+    },
+    {
+      "role": "a",
+      "state": "run",
+      "index": 4,
+      "sourcePath": "art/source/retro/frames/a-run-opposite-v1.png",
+      "rect": {
+        "x": 206,
+        "y": 8,
+        "width": 509,
+        "height": 509
+      },
+      "pivot": {
+        "x": 256,
+        "y": 502
+      },
+      "scale": 0.38
+    },
+    {
+      "role": "a",
+      "state": "run",
+      "index": 5,
+      "sourcePath": "art/source/retro/frames/a-run-opposite-v1.png",
+      "rect": {
+        "x": 903,
+        "y": 3,
+        "width": 288,
+        "height": 529
+      },
+      "pivot": {
+        "x": 167,
+        "y": 507
+      },
+      "scale": 0.38
+    },
+    {
+      "role": "a",
+      "state": "run",
+      "index": 6,
+      "sourcePath": "art/source/retro/frames/a-run-opposite-v1.png",
+      "rect": {
+        "x": 238,
+        "y": 515,
+        "width": 453,
+        "height": 504
+      },
+      "pivot": {
+        "x": 224,
+        "y": 500
+      },
+      "scale": 0.38
+    },
+    {
+      "role": "a",
+      "state": "run",
+      "index": 7,
+      "sourcePath": "art/source/retro/frames/a-run-v1.png",
+      "rect": {
+        "x": 1186,
+        "y": 515,
+        "width": 341,
+        "height": 451
+      },
+      "pivot": {
+        "x": 164,
+        "y": 487
+      },
+      "scale": 0.4
+    },
+    {
+      "role": "b",
+      "state": "run",
+      "index": 0,
+      "sourcePath": "art/source/retro/frames/b-run-v1.png",
+      "rect": {
+        "x": 142,
+        "y": 1,
+        "width": 293,
+        "height": 437
+      },
+      "pivot": {
+        "x": 148,
+        "y": 442
+      },
+      "scale": 0.44
+    },
+    {
+      "role": "b",
+      "state": "run",
+      "index": 1,
+      "sourcePath": "art/source/retro/frames/b-run-v1.png",
+      "rect": {
+        "x": 568,
+        "y": 0,
+        "width": 230,
+        "height": 440
+      },
+      "pivot": {
+        "x": 114,
+        "y": 443
+      },
+      "scale": 0.44
+    },
+    {
+      "role": "b",
+      "state": "run",
+      "index": 2,
+      "sourcePath": "art/source/retro/frames/b-run-v1.png",
+      "rect": {
+        "x": 947,
+        "y": 0,
+        "width": 318,
+        "height": 432
+      },
+      "pivot": {
+        "x": 143,
+        "y": 443
+      },
+      "scale": 0.44
+    },
+    {
+      "role": "b",
+      "state": "run",
+      "index": 3,
+      "sourcePath": "art/source/retro/frames/b-run-v1.png",
+      "rect": {
+        "x": 1379,
+        "y": 0,
+        "width": 333,
+        "height": 414
+      },
+      "pivot": {
+        "x": 156,
+        "y": 443
+      },
+      "scale": 0.44
+    },
+    {
+      "role": "b",
+      "state": "run",
+      "index": 4,
+      "sourcePath": "art/source/retro/frames/b-run-v1.png",
+      "rect": {
+        "x": 108,
+        "y": 443,
+        "width": 330,
+        "height": 437
+      },
+      "pivot": {
+        "x": 174,
+        "y": 439
+      },
+      "scale": 0.44
+    },
+    {
+      "role": "b",
+      "state": "run",
+      "index": 5,
+      "sourcePath": "art/source/retro/frames/b-run-v1.png",
+      "rect": {
+        "x": 577,
+        "y": 443,
+        "width": 215,
+        "height": 437
+      },
+      "pivot": {
+        "x": 105,
+        "y": 439
+      },
+      "scale": 0.44
+    },
+    {
+      "role": "b",
+      "state": "run",
+      "index": 6,
+      "sourcePath": "art/source/retro/frames/b-run-v1.png",
+      "rect": {
+        "x": 966,
+        "y": 443,
+        "width": 266,
+        "height": 432
+      },
+      "pivot": {
+        "x": 124,
+        "y": 439
+      },
+      "scale": 0.44
+    },
+    {
+      "role": "b",
+      "state": "run",
+      "index": 7,
+      "sourcePath": "art/source/retro/frames/b-run-v1.png",
+      "rect": {
+        "x": 1408,
+        "y": 440,
+        "width": 310,
+        "height": 414
+      },
+      "pivot": {
+        "x": 127,
+        "y": 442
+      },
+      "scale": 0.44
+    },
+    {
+      "role": "a",
+      "state": "jump",
+      "index": 0,
+      "sourcePath": "art/source/retro/frames/a-extra-v2.png",
+      "rect": {
+        "x": 64,
+        "y": 70,
+        "width": 207,
+        "height": 247
+      },
+      "pivot": {
+        "x": 121,
+        "y": 288
+      },
+      "scale": 0.75
+    },
+    {
+      "role": "b",
+      "state": "jump",
+      "index": 0,
+      "sourcePath": "art/source/retro/frames/b-extra-v2.png",
+      "rect": {
+        "x": 70,
+        "y": 49,
+        "width": 220,
+        "height": 238
+      },
+      "pivot": {
+        "x": 115,
+        "y": 287
+      },
+      "scale": 0.75
+    },
+    {
+      "role": "a",
+      "state": "fall",
+      "index": 0,
+      "sourcePath": "art/source/retro/frames/a-extra-v2.png",
+      "rect": {
+        "x": 360,
+        "y": 74,
+        "width": 251,
+        "height": 256
+      },
+      "pivot": {
+        "x": 130,
+        "y": 274
+      },
+      "scale": 0.75
+    },
+    {
+      "role": "b",
+      "state": "fall",
+      "index": 0,
+      "sourcePath": "art/source/retro/frames/b-extra-v2.png",
+      "rect": {
+        "x": 385,
+        "y": 49,
+        "width": 198,
+        "height": 258
+      },
+      "pivot": {
+        "x": 105,
+        "y": 277
+      },
+      "scale": 0.75
+    },
+    {
+      "role": "a",
+      "state": "land",
+      "index": 0,
+      "sourcePath": "art/source/retro/frames/a-extra-v2.png",
+      "rect": {
+        "x": 704,
+        "y": 137,
+        "width": 175,
+        "height": 201
+      },
+      "pivot": {
+        "x": 106,
+        "y": 197
+      },
+      "scale": 0.75
+    },
+    {
+      "role": "b",
+      "state": "land",
+      "index": 0,
+      "sourcePath": "art/source/retro/frames/b-extra-v2.png",
+      "rect": {
+        "x": 685,
+        "y": 95,
+        "width": 197,
+        "height": 218
+      },
+      "pivot": {
+        "x": 125,
+        "y": 217
+      },
+      "scale": 0.75
+    },
+    {
+      "role": "a",
+      "state": "land",
+      "index": 1,
+      "sourcePath": "art/source/retro/frames/a-extra-v2.png",
+      "rect": {
+        "x": 1017,
+        "y": 92,
+        "width": 149,
+        "height": 244
+      },
+      "pivot": {
+        "x": 83,
+        "y": 242
+      },
+      "scale": 0.75
+    },
+    {
+      "role": "b",
+      "state": "land",
+      "index": 1,
+      "sourcePath": "art/source/retro/frames/b-extra-v2.png",
+      "rect": {
+        "x": 995,
+        "y": 46,
+        "width": 170,
+        "height": 267
+      },
+      "pivot": {
+        "x": 105,
+        "y": 266
+      },
+      "scale": 0.75
+    },
+    {
+      "role": "a",
+      "state": "interact",
+      "index": 0,
+      "sourcePath": "art/source/retro/frames/a-extra-v2.png",
+      "rect": {
+        "x": 84,
+        "y": 383,
+        "width": 178,
+        "height": 262
+      },
+      "pivot": {
+        "x": 101,
+        "y": 261
+      },
+      "scale": 0.75
+    },
+    {
+      "role": "b",
+      "state": "interact",
+      "index": 0,
+      "sourcePath": "art/source/retro/frames/b-extra-v2.png",
+      "rect": {
+        "x": 69,
+        "y": 356,
+        "width": 237,
+        "height": 270
+      },
+      "pivot": {
+        "x": 116,
+        "y": 274
+      },
+      "scale": 0.75
+    },
+    {
+      "role": "a",
+      "state": "interact",
+      "index": 1,
+      "sourcePath": "art/source/retro/frames/a-extra-v2.png",
+      "rect": {
+        "x": 413,
+        "y": 379,
+        "width": 155,
+        "height": 266
+      },
+      "pivot": {
+        "x": 77,
+        "y": 265
+      },
+      "scale": 0.75
+    },
+    {
+      "role": "b",
+      "state": "interact",
+      "index": 1,
+      "sourcePath": "art/source/retro/frames/b-extra-v2.png",
+      "rect": {
+        "x": 401,
+        "y": 356,
+        "width": 181,
+        "height": 275
+      },
+      "pivot": {
+        "x": 89,
+        "y": 274
+      },
+      "scale": 0.75
+    },
+    {
+      "role": "a",
+      "state": "interact",
+      "index": 2,
+      "sourcePath": "art/source/retro/frames/a-extra-v2.png",
+      "rect": {
+        "x": 653,
+        "y": 379,
+        "width": 248,
+        "height": 267
+      },
+      "pivot": {
+        "x": 157,
+        "y": 265
+      },
+      "scale": 0.75
+    },
+    {
+      "role": "b",
+      "state": "interact",
+      "index": 2,
+      "sourcePath": "art/source/retro/frames/b-extra-v2.png",
+      "rect": {
+        "x": 678,
+        "y": 357,
+        "width": 226,
+        "height": 275
+      },
+      "pivot": {
+        "x": 132,
+        "y": 273
+      },
+      "scale": 0.75
+    },
+    {
+      "role": "a",
+      "state": "interact",
+      "index": 3,
+      "sourcePath": "art/source/retro/frames/a-extra-v2.png",
+      "rect": {
+        "x": 1021,
+        "y": 375,
+        "width": 138,
+        "height": 271
+      },
+      "pivot": {
+        "x": 79,
+        "y": 269
+      },
+      "scale": 0.75
+    },
+    {
+      "role": "b",
+      "state": "interact",
+      "index": 3,
+      "sourcePath": "art/source/retro/frames/b-extra-v2.png",
+      "rect": {
+        "x": 1012,
+        "y": 357,
+        "width": 139,
+        "height": 275
+      },
+      "pivot": {
+        "x": 88,
+        "y": 273
+      },
+      "scale": 0.75
+    },
+    {
+      "role": "a",
+      "state": "happy",
+      "index": 0,
+      "sourcePath": "art/source/retro/frames/a-extra-v2.png",
+      "rect": {
+        "x": 62,
+        "y": 695,
+        "width": 226,
+        "height": 260
+      },
+      "pivot": {
+        "x": 123,
+        "y": 260
+      },
+      "scale": 0.75
+    },
+    {
+      "role": "b",
+      "state": "happy",
+      "index": 0,
+      "sourcePath": "art/source/retro/frames/b-extra-v2.png",
+      "rect": {
+        "x": 57,
+        "y": 661,
+        "width": 252,
+        "height": 266
+      },
+      "pivot": {
+        "x": 128,
+        "y": 269
+      },
+      "scale": 0.75
+    },
+    {
+      "role": "a",
+      "state": "happy",
+      "index": 1,
+      "sourcePath": "art/source/retro/frames/a-extra-v2.png",
+      "rect": {
+        "x": 416,
+        "y": 695,
+        "width": 138,
+        "height": 260
+      },
+      "pivot": {
+        "x": 74,
+        "y": 260
+      },
+      "scale": 0.75
+    },
+    {
+      "role": "b",
+      "state": "happy",
+      "index": 1,
+      "sourcePath": "art/source/retro/frames/b-extra-v2.png",
+      "rect": {
+        "x": 413,
+        "y": 662,
+        "width": 140,
+        "height": 265
+      },
+      "pivot": {
+        "x": 77,
+        "y": 268
+      },
+      "scale": 0.75
+    },
+    {
+      "role": "a",
+      "state": "happy",
+      "index": 2,
+      "sourcePath": "art/source/retro/frames/a-extra-v2.png",
+      "rect": {
+        "x": 697,
+        "y": 697,
+        "width": 156,
+        "height": 259
+      },
+      "pivot": {
+        "x": 113,
+        "y": 258
+      },
+      "scale": 0.75
+    },
+    {
+      "role": "b",
+      "state": "happy",
+      "index": 2,
+      "sourcePath": "art/source/retro/frames/b-extra-v2.png",
+      "rect": {
+        "x": 718,
+        "y": 661,
+        "width": 132,
+        "height": 270
+      },
+      "pivot": {
+        "x": 92,
+        "y": 269
+      },
+      "scale": 0.75
+    },
+    {
+      "role": "a",
+      "state": "happy",
+      "index": 3,
+      "sourcePath": "art/source/retro/frames/a-extra-v2.png",
+      "rect": {
+        "x": 1018,
+        "y": 694,
+        "width": 143,
+        "height": 252
+      },
+      "pivot": {
+        "x": 82,
+        "y": 261
+      },
+      "scale": 0.75
+    },
+    {
+      "role": "b",
+      "state": "happy",
+      "index": 3,
+      "sourcePath": "art/source/retro/frames/b-extra-v2.png",
+      "rect": {
+        "x": 1012,
+        "y": 664,
+        "width": 149,
+        "height": 265
+      },
+      "pivot": {
+        "x": 88,
+        "y": 266
+      },
+      "scale": 0.75
+    },
+    {
+      "role": "a",
+      "state": "happy",
+      "index": 4,
+      "sourcePath": "art/source/retro/frames/a-extra-v2.png",
+      "rect": {
+        "x": 81,
+        "y": 980,
+        "width": 176,
+        "height": 248
+      },
+      "pivot": {
+        "x": 104,
+        "y": 250
+      },
+      "scale": 0.75
+    },
+    {
+      "role": "b",
+      "state": "happy",
+      "index": 4,
+      "sourcePath": "art/source/retro/frames/b-extra-v2.png",
+      "rect": {
+        "x": 84,
+        "y": 955,
+        "width": 188,
+        "height": 260
+      },
+      "pivot": {
+        "x": 101,
+        "y": 260
+      },
+      "scale": 0.75
+    },
+    {
+      "role": "a",
+      "state": "happy",
+      "index": 5,
+      "sourcePath": "art/source/retro/frames/a-extra-v2.png",
+      "rect": {
+        "x": 417,
+        "y": 977,
+        "width": 132,
+        "height": 254
+      },
+      "pivot": {
+        "x": 73,
+        "y": 253
+      },
+      "scale": 0.75
+    },
+    {
+      "role": "b",
+      "state": "happy",
+      "index": 5,
+      "sourcePath": "art/source/retro/frames/b-extra-v2.png",
+      "rect": {
+        "x": 417,
+        "y": 949,
+        "width": 118,
+        "height": 266
+      },
+      "pivot": {
+        "x": 73,
+        "y": 266
+      },
+      "scale": 0.75
+    }
+  ],
+  "art": {
+    "background": {
+      "sourcePath": "art/source/retro/background/cafe-v1.png",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 1536,
+        "height": 1024
+      },
+      "scale": 0.6666666666666666
+    },
+    "giftA": {
+      "sourcePath": "art/source/retro/props/props-v2.png",
+      "rect": {
+        "x": 28,
+        "y": 130,
+        "width": 397,
+        "height": 291
+      },
+      "scale": 0.23
+    },
+    "giftB": {
+      "sourcePath": "art/source/retro/props/props-v2.png",
+      "rect": {
+        "x": 431,
+        "y": 59,
+        "width": 293,
+        "height": 410
+      },
+      "scale": 0.23
+    },
+    "finish": {
+      "sourcePath": "art/source/retro/props/props-v2.png",
+      "rect": {
+        "x": 769,
+        "y": 102,
+        "width": 467,
+        "height": 324
+      },
+      "scale": 0.75
+    },
+    "gateClosed": {
+      "sourcePath": "art/source/retro/props/props-v2.png",
+      "rect": {
+        "x": 72,
+        "y": 498,
+        "width": 342,
+        "height": 367
+      },
+      "scale": 0.65
+    },
+    "gateOpen": {
+      "sourcePath": "art/source/retro/props/props-v2.png",
+      "rect": {
+        "x": 460,
+        "y": 502,
+        "width": 330,
+        "height": 361
+      },
+      "scale": 0.65
+    },
+    "plateIdle": {
+      "sourcePath": "art/source/retro/props/props-v2.png",
+      "rect": {
+        "x": 820,
+        "y": 631,
+        "width": 414,
+        "height": 202
+      },
+      "scale": 0.32
+    },
+    "plateActive": {
+      "sourcePath": "art/source/retro/props/props-v2.png",
+      "rect": {
+        "x": 27,
+        "y": 973,
+        "width": 410,
+        "height": 201
+      },
+      "scale": 0.32
+    }
+  }
+}

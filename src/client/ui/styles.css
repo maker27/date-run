@@ -1,0 +1,619 @@
+.hero {
+  padding: clamp(20px, 5vw, 60px) 0 28px;
+}
+
+.hero p {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  max-width: 36rem;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  color: #eac17b;
+  font-weight: 700;
+  font-size: .75rem;
+}
+
+.landing-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(260px, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.card, .room, .invite-panel, .result-panel {
+  background: #302436;
+  border: 1px solid #786052;
+  border-radius: 6px;
+}
+
+.card {
+  padding: clamp(18px, 3vw, 30px);
+  background: #f1e4cb;
+  color: #382937;
+  border-top: 5px solid #ba493b;
+  box-shadow: 5px 5px 0 #130e1940;
+}
+
+.card > p {
+  margin-bottom: 1.5rem;
+}
+
+fieldset {
+  border: 0;
+  margin: 0 0 1.5rem;
+  padding: 0;
+  min-width: 0;
+}
+
+legend {
+  font-weight: 700;
+  margin-bottom: .8rem;
+}
+
+.theme-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .65rem;
+}
+
+.theme-choice {
+  display: block;
+  position: relative;
+  border: 2px solid #907868;
+  border-radius: 3px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #392c3e;
+  color: #f5ead6;
+}
+
+.theme-choice:has(input:checked) {
+  border-color: #ba493b;
+  box-shadow: 0 0 0 2px #ba493b33;
+}
+
+.theme-choice:has(input:focus-visible) {
+  outline: 3px solid #f9bf77;
+  outline-offset: 3px;
+}
+
+.theme-choice:has(input:disabled) {
+  opacity: .62;
+  cursor: not-allowed;
+}
+
+.theme-choice input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  min-height: 0;
+}
+
+.theme-choice img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3/2;
+  object-fit: cover;
+  display: block;
+}
+
+.theme-choice span {
+  display: block;
+  padding: .55rem;
+  font-size: .88rem;
+  font-weight: 650;
+}
+
+.role-grid {
+  display: flex;
+  gap: .65rem;
+  flex-wrap: wrap;
+}
+
+.role-grid label {
+  position: relative;
+  cursor: pointer;
+}
+
+.role-grid input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  min-height: 0;
+}
+
+.role-grid label > span {
+  display: block;
+  padding: .68rem 1rem;
+  border: 1px solid #907868;
+  border-radius: 3px;
+}
+
+.role-grid input:checked + span {
+  background: #ba493b;
+  color: #fff5e6;
+  border-color: #ba493b;
+}
+
+.role-grid input:focus-visible + span {
+  outline: 3px solid #f9bf77;
+  outline-offset: 3px;
+}
+
+.role-grid input:disabled + span {
+  opacity: .55;
+}
+
+.join-card form > label, .invite-fields label {
+  display: block;
+  font-weight: 650;
+}
+
+.join-card input {
+  display: block;
+  margin: .45rem 0 1rem;
+  width: 100%;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.preview {
+  padding: .8rem 1rem;
+  margin: 1rem 0;
+  background: #e5d1ad;
+  border-left: 3px solid #936939;
+  border-radius: 0;
+}
+
+.preview p:last-child {
+  margin-bottom: 0;
+}
+
+.room {
+  padding: clamp(14px, 2.5vw, 28px);
+}
+
+.lobby-room > h2 {
+  margin-bottom: .35rem;
+}
+
+.room-intro {
+  max-width: 38rem;
+}
+
+.invite-panel {
+  padding: 1rem;
+  margin: 1rem 0;
+  background: transparent;
+}
+
+.invite-fields {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: .6rem;
+  align-items: end;
+}
+
+.invite-fields label {
+  min-width: 0;
+}
+
+.invite-fields input {
+  display: block;
+  width: 100%;
+  margin-top: .35rem;
+  text-overflow: ellipsis;
+}
+
+.invite-fields button {
+  white-space: nowrap;
+}
+
+.lobby-config {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(150px, 1fr);
+  gap: 1.5rem;
+}
+
+.player-list {
+  display: flex;
+  gap: .8rem;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+}
+
+.player-list li {
+  padding: .5rem .8rem;
+  background: #49364b;
+  border-radius: 3px;
+}
+
+.room-toolbar {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: .75rem;
+}
+
+.room-mark {
+  font-weight: 800;
+  color: #eac17b;
+}
+
+.room-toolbar button {
+  margin-left: auto;
+}
+
+.room-lobby, .room-game, .room-result {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.play-info h2 {
+  margin: .3rem 0;
+}
+
+.play-info p {
+  margin-bottom: .5rem;
+}
+
+.game-hud {
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+  margin: .5rem 0;
+}
+
+.game-hud span {
+  background: transparent;
+  border: 1px solid #806957;
+  padding: .36rem .7rem;
+  border-radius: 3px;
+  font-size: .85rem;
+}
+
+.game-canvas {
+  width: 100%;
+  height: clamp(280px, 52dvh, 560px);
+  border-radius: 3px;
+  overflow: hidden;
+  background: #302436;
+}
+
+.game-canvas canvas {
+  display: block;
+  max-width: 100%;
+}
+
+.touch-controls {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: .7rem;
+  touch-action: none;
+}
+
+.touch-controls > div {
+  display: flex;
+  gap: .5rem;
+}
+
+.touch-controls button {
+  min-width: 62px;
+  min-height: 58px;
+  touch-action: none;
+  user-select: none;
+  background: #eac17b;
+  color: #302332;
+}
+
+.touch-controls .action-controls button:last-child {
+  background: #ba493b;
+  color: #fff5e6;
+}
+
+.keyboard-hint {
+  font-size: .82rem;
+  margin: .55rem 0 0;
+}
+
+.result-panel {
+  padding: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.result-panel ul {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding-left: 1.2rem;
+}
+
+@media (max-width: 760px) {
+  .landing-grid, .lobby-config {
+    grid-template-columns: 1fr;
+  }
+  .hero {
+    padding: 18px 0;
+  }
+  .room {
+    padding: 14px;
+  }
+  :is(.room-lobby, .room-game) .game-canvas {
+    height: min(49dvh, 420px);
+  }
+  .keyboard-hint {
+    display: none;
+  }
+}
+
+@media (max-width: 430px) {
+  .theme-grid {
+    gap: .35rem;
+  }
+  .theme-choice span {
+    font-size: .73rem;
+    padding: .45rem;
+  }
+  .invite-fields {
+    grid-template-columns: 1fr;
+  }
+  .invite-fields button {
+    justify-self: start;
+  }
+  .touch-controls button {
+    min-width: 52px;
+    min-height: 54px;
+    padding: .45rem;
+  }
+  :is(.room-lobby, .room-game) .game-canvas {
+    height: 44dvh;
+    min-height: 230px;
+  }
+  .room-toolbar {
+    font-size: .85rem;
+  }
+  .room-toolbar button {
+    padding: .55rem;
+  }
+}
+
+@media (max-height: 540px) and (orientation: landscape) {
+  :is(.room-lobby, .room-game) .game-canvas {
+    height: 55dvh;
+    min-height: 200px;
+  }
+  .touch-controls button {
+    min-height: 44px;
+  }
+  .play-info p, .keyboard-hint {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms;
+    transition-duration: .01ms;
+    scroll-behavior: auto;
+  }
+}
+
+.join-card form > .actions + .actions {
+  margin-top: .65rem;
+}
+
+@media (max-width: 760px) and (orientation: portrait) {
+  :is(.room-lobby, .room-game) .game-canvas {
+    height: clamp(380px, 64dvh, 520px);
+  }
+  .room-game .touch-controls {
+    position: relative;
+    height: 150px;
+    margin-top: -150px;
+    padding: 52px 8px 8px;
+    align-items: end;
+    z-index: 1;
+  }
+  .room-game .touch-controls > div {
+    align-items: end;
+  }
+  .room-game .touch-controls button {
+    min-height: 58px;
+  }
+}
+
+@media (max-height: 540px) and (orientation: landscape) {
+  main.app-room {
+    padding: 8px max(8px, env(safe-area-inset-right)) 8px max(8px, env(safe-area-inset-left));
+  }
+  :is(.room-lobby, .room-game) {
+    padding: 8px;
+  }
+  .room-game .room-toolbar {
+    margin-bottom: .2rem;
+  }
+  .room-game .play-info h2 {
+    font-size: 1.1rem;
+    line-height: 1.1;
+    margin: 0;
+  }
+  .room-game .game-hud {
+    margin: .2rem 0;
+    gap: .25rem;
+  }
+  .room-game .game-hud span {
+    font-size: .72rem;
+    padding: .18rem .5rem;
+  }
+  :is(.room-lobby, .room-game) .game-canvas {
+    height: min(48dvh, 190px);
+    min-height: 170px;
+  }
+  .room-game .touch-controls {
+    margin-top: .25rem;
+  }
+  .room-game .touch-controls button {
+    min-height: 44px;
+    padding: .4rem .8rem;
+  }
+}
+
+.card .error {
+  color: #982e26;
+}
+
+.hero {
+  position: relative;
+  border-bottom: 1px solid #806957;
+  margin-bottom: 24px;
+}
+
+.hero::after {
+  content: "ДЛЯ ДВОИХ";
+  position: absolute;
+  right: 0;
+  top: 30px;
+  writing-mode: vertical-rl;
+  letter-spacing: .3em;
+  font-size: .7rem;
+  color: #eac17b;
+}
+
+.room-toolbar {
+  padding-bottom: .6rem;
+  border-bottom: 1px solid #806957;
+}
+
+.room-mark {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.35rem;
+  font-style: italic;
+}
+
+.result-panel {
+  position: relative;
+  border: 0;
+  border-bottom: 1px solid #806957;
+  border-radius: 0;
+  background: transparent;
+  padding: 8px 0 22px;
+}
+
+.result-panel h2 {
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  margin-bottom: .6rem;
+}
+
+.result-panel h3 {
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: #eac17b;
+}
+
+.result-panel ul {
+  list-style: none;
+  padding: 0;
+  gap: .6rem;
+}
+
+.result-panel li {
+  border-left: 2px solid #eac17b;
+  padding-left: .7rem;
+}
+
+.result-panel .eyebrow {
+  margin-bottom: .6rem;
+}
+
+.room-result .game-canvas {
+  height: clamp(300px, 45dvh, 420px);
+}
+
+.play-info > p {
+  max-width: 65ch;
+}
+
+.join-card h2, .create-card h2 {
+  font-size: 1.8rem;
+}
+
+.card button.quiet {
+  border-color: #907868;
+}
+
+@media (max-width: 430px) {
+  .hero::after {
+    display: none;
+  }
+  .room-toolbar {
+    flex-wrap: wrap;
+  }
+  .game-hud span {
+    font-size: .75rem;
+  }
+  .result-panel .actions {
+    align-items: stretch;
+  }
+  .result-panel h2 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 430px) {
+  .touch-controls .action-controls {
+    flex-direction: column;
+    gap: .35rem;
+  }
+  .touch-controls .action-controls button {
+    min-height: 44px;
+  }
+  .room-game .touch-controls {
+    padding-top: 32px;
+  }
+}
+
+.game-canvas {
+  position: relative;
+}
+
+.scene-player-label {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  padding: 4px 9px;
+  border: 1px solid #806957;
+  border-radius: 3px;
+  background: #302436e8;
+  color: #f5ead6;
+  font-size: .75rem;
+  line-height: 1.3;
+}
+
+.scene-player-label[data-role=b] {
+  border-color: #eac17b;
+}
+
+@media (max-width: 760px) and (orientation: portrait) {
+  .room-game .touch-controls {
+    height: auto;
+    margin-top: .7rem;
+    padding: 0;
+    position: relative;
+    align-items: end;
+  }
+}
+
+@media (max-width: 599px) {
+  :is(.room-lobby, .room-game) .game-canvas {
+    height: clamp(420px, 64dvh, 600px);
+  }
+}

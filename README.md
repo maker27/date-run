@@ -1,0 +1,39 @@
+# Date Run
+
+Кооперативный платформер для двоих: три локации, подарки и общий финиш. Один создаёт комнату и отправляет ссылку, второй подключается. Оба нажимают «Готов».
+
+## Стек
+
+- TypeScript, Node.js 24.
+- Клиент: Preact, PixiJS 8, Vite.
+- Сервер: HTTP на Node.js, WebSocket через `ws`, валидация данных через Zod.
+- Тесты: Vitest, Testing Library, Playwright; линтинг: ESLint. Для E2E нужны nginx, openssl и Chromium из Playwright.
+- Деплой: Docker, Docker Compose, nginx.
+- Хранение комнат: в памяти сервера, без базы данных.
+
+## Запуск
+
+```sh
+npm ci
+npm run dev:server
+# в другом терминале
+npm run dev
+```
+
+Открыть http://localhost:5173/date-run/.
+
+Для телефона в той же сети откройте `http://<IP-компьютера>:5173/date-run/`. При запуске `dev:server` добавьте этот origin (схема, IP и порт, без `/date-run/`) в `ALLOWED_ORIGINS` через запятую вместе с адресами localhost. После изменения переменной сервер нужно перезапустить.
+
+Стрелки или A/D - движение, пробел/W/↑ - прыжок, E - взять свой подарок. На телефоне есть экранные кнопки. После подарков нужно одновременно встать на две площадки и встретиться у арки.
+
+```sh
+npm run lint
+npm run typecheck
+npm test
+npm run build
+ALLOWED_ORIGINS=http://localhost:3000 npm start
+```
+
+Сборка доступна на http://localhost:3000/date-run/. Для production нужны `ALLOWED_ORIGINS`, `NODE_ENV=production` и `APP_REVISION` (40 символов Git SHA). Шаблоны Docker и nginx - в `deploy/`. Лаунчер `deploy/launcher.sh` требует существующий коммит и чистую рабочую копию; незакоммиченные изменения к релизу не допускаются.
+
+Комнаты хранятся в памяти одного сервера: перезапуск завершает игры. При обрыве связи место сохраняется 30 секунд после обнаружения отключения.
