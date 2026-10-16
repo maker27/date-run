@@ -66,8 +66,9 @@ export class GameSession {
   private resyncing = false;
   private contextLost = false;
   private authenticated = false;
-  private lastFrame: number | null = null;
+  private lastInputAt: number | null = null;
   private accumulator = 0;
+  private inputTimer: ReturnType<typeof setInterval> | null = null;
   private pingTimer: ReturnType<typeof setInterval> | null = null;
   private pingInFlight: { roomId: string | undefined; epoch: number | undefined } | null = null;
   private operation: AbortController | null = null;
@@ -289,6 +290,7 @@ export class GameSession {
     this.loadingSceneTheme = null;
     this.operation?.abort();
     this.stopPing();
+    this.stopInputTimer();
     this.finish.destroy();
     this.visibility.removeEventListener('visibilitychange', this.onVisibility);
     this.unsubs.forEach((unsubscribe) => unsubscribe());
@@ -491,9 +493,19 @@ export class GameSession {
       this.scene?.applyFinish(view);
       if (this.context.resultsVisible !== view.resultsVisible) this.updateContext({ resultsVisible: view.resultsVisible });
     }
-    if (!this.canInput()) { this.lastFrame = null; this.accumulator = 0; return; }
-    const previous = this.lastFrame;
-    this.lastFrame = now;
+    this.advanceInput(now);
+    if (!this.canInput()) return;
+    const serverNow = this.sync.serverNow(now);
+    if (serverNow !== null) {
+      const rendered = this.buffer.sample(serverNow - INTERPOLATION_DELAY_MS);
+      if (rendered) this.scene?.setRemoteBodies(rendered.players);
+    }
+  }
+
+  private advanceInput(now: number): void {
+    if (!this.canInput()) { this.lastInputAt = null; this.accumulator = 0; return; }
+    const previous = this.lastInputAt;
+    this.lastInputAt = now;
     if (previous === null) return;
     this.accumulator = Math.min(this.accumulator + Math.max(0, now - previous) / 1000, 5 * STEP_SECONDS);
     let steps = 0;
@@ -511,11 +523,6 @@ export class GameSession {
         this.transport.sendInput({ version: 1, type: 'input:update', epoch: this.snapshot.epoch, inputGeneration: own.inputGeneration, seq, input });
         this.scene?.setLocalBody(this.prediction.predict(seq, input));
       } catch (error) { this.handleError(error); this.pauseLocal(); break; }
-    }
-    const serverNow = this.sync.serverNow(now);
-    if (serverNow !== null) {
-      const rendered = this.buffer.sample(serverNow - INTERPOLATION_DELAY_MS);
-      if (rendered) this.scene?.setRemoteBodies(rendered.players);
     }
   }
 
@@ -542,7 +549,7 @@ export class GameSession {
       if (reply) this.updateContext({ error: 'invalid_response' });
     }
     this.resyncing = false;
-    this.lastFrame = null;
+    this.lastInputAt = null;
     this.refreshScenePause();
   }
 
@@ -570,8 +577,25 @@ export class GameSession {
     });
   }
 
-  private pauseLocal(): void { this.input.reset(); this.lastFrame = null; this.accumulator = 0; this.scene?.setPaused(true); }
-  private refreshScenePause(): void { this.scene?.setPaused(!this.canInput() && !this.canPresent()); }
+  private stopInputTimer(): void {
+    if (this.inputTimer !== null) clearInterval(this.inputTimer);
+    this.inputTimer = null;
+  }
+
+  private pauseLocal(): void {
+    this.stopInputTimer();
+    this.input.reset();
+    this.lastInputAt = null;
+    this.accumulator = 0;
+    this.scene?.setPaused(true);
+  }
+
+  private refreshScenePause(): void {
+    if (this.canInput()) {
+      this.inputTimer ??= setInterval(() => this.advanceInput(this.clock()), STEP_SECONDS * 1000);
+    } else this.stopInputTimer();
+    this.scene?.setPaused(!this.canInput() && !this.canPresent());
+  }
   private canPresent(): boolean {
     return !this.destroyed && this.scene !== null && this.readyScene === this.scene && this.credential !== null && this.authenticated
       && this.transport.status === 'connected' && this.snapshot?.state.phase === 'complete'

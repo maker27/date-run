@@ -211,12 +211,12 @@ export async function occupySwitch(page: Page, request: APIRequestContext, roomI
       await page.waitForFunction(({ playerId, stopX, axis }) => {
         const body = window.__dateRunTest.snapshot()?.state.players.find(({ id }) => id === playerId)?.body;
         return body !== undefined && (body.x - stopX) * axis >= 0;
-      }, { playerId: player.id, stopX: targetX - axis * brakingDistance, axis });
+      }, { playerId: player.id, stopX: targetX - axis * brakingDistance, axis }, { polling: 16 });
     } finally {
       await page.keyboard.up(direction);
     }
     await page.waitForFunction((playerId) =>
-      window.__dateRunTest.snapshot()?.state.players.find(({ id }) => id === playerId)?.body.vx === 0, player.id);
+      window.__dateRunTest.snapshot()?.state.players.find(({ id }) => id === playerId)?.body.vx === 0, player.id, { polling: 16 });
     return false;
   }, { timeout: 30_000, intervals: [16, 20, 24] }).toBe(true);
 }

@@ -1,4 +1,4 @@
-import { afterEach, describe, expect, it, vi } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { makeSnapshot, localPlayerId, peerPlayerId } from '../../../tests/fixtures/world-snapshot.js';
 import type { Credential, PlayerBody, PlayerInput, WorldSnapshot } from '../../shared/model.js';
 import { ClientMessageSchema, type ClientRequest, type InputUpdate, type ServerEvent, type ServerReply, type Unsubscribe } from '../../shared/protocol.js';
@@ -229,14 +229,60 @@ function makeInput(axis: PlayerInput['axis'] = 1) {
   };
 }
 
+beforeEach(() => {
+  vi.useFakeTimers({ toFake: ['setInterval', 'clearInterval'] });
+});
+
 afterEach(() => {
   sessions.splice(0).forEach((session) => session.destroy());
   document.body.replaceChildren();
   history.replaceState(null, '', '/');
   vi.unstubAllGlobals();
+  vi.useRealTimers();
 });
 
 describe('GameSession', () => {
+  it('sends fixed-step input when the renderer does not produce frames', async () => {
+    vi.useFakeTimers({ toFake: ['Date', 'setInterval', 'clearInterval'] });
+    vi.setSystemTime(0);
+    const transport = new TestTransport();
+    const scene = makeSceneHarness();
+    const visibility = new TestVisibility();
+    const session = trackedSession({
+      transport,
+      credentials: new CredentialStore(new TestStorage()),
+      input: makeInput(),
+      sceneFactory: scene.factory,
+      visibility,
+      clock: () => Date.now(),
+      requestId: requestIds(),
+    });
+    await session.attachScene(document.createElement('div'));
+    const joining = session.join('ABCD2345');
+    const join = await transport.waitForRequest('room:join');
+    transport.reply(joinedReply(join.requestId, localPlayerId, snapshotForTheme('winter')));
+    await joining;
+
+    await vi.advanceTimersByTimeAsync(1000);
+
+    expect(transport.inputs.length).toBeGreaterThanOrEqual(58);
+    expect(transport.inputs.length).toBeLessThanOrEqual(60);
+    expect(transport.inputs.every(({ input }) => input.axis === 1)).toBe(true);
+    scene.frame(Date.now());
+    const beforeFrame = transport.inputs.length;
+    scene.frame(Date.now());
+    expect(transport.inputs).toHaveLength(beforeFrame);
+    visibility.set('hidden');
+    await transport.waitForRequest('player:suspend');
+    await vi.advanceTimersByTimeAsync(1000);
+    expect(transport.inputs).toHaveLength(beforeFrame);
+    session.destroy();
+    expect(vi.getTimerCount()).toBe(0);
+    const sent = transport.inputs.length;
+    await vi.advanceTimersByTimeAsync(1000);
+    expect(transport.inputs).toHaveLength(sent);
+  });
+
   it('creates a room without crypto.randomUUID on an insecure origin', async () => {
     const getRandomValues = crypto.getRandomValues.bind(crypto);
     vi.stubGlobal('crypto', { getRandomValues });
@@ -946,6 +992,7 @@ describe('GameSession', () => {
   });
 
   it('suspends while hidden and waits for resync before sending input after becoming visible', async () => {
+    let clientNow = 100;
     const transport = new TestTransport();
     const storage = new TestStorage();
     const visibility = new TestVisibility();
@@ -956,7 +1003,7 @@ describe('GameSession', () => {
       input: makeInput(),
       sceneFactory: scene.factory,
       visibility,
-      clock: () => 100,
+      clock: () => clientNow,
       requestId: requestIds(),
     });
     await session.attachScene(document.createElement('div'));
@@ -982,6 +1029,7 @@ describe('GameSession', () => {
     scene.frame(20_000);
     expect(transport.inputs).toHaveLength(0);
     const unpauseCount = scene.pausedStates.filter((paused) => !paused).length;
+    clientNow = 30_000;
     transport.reply({
       version: 1,
       type: 'room:resynced',
