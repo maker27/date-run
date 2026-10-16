@@ -9,7 +9,7 @@ export default defineConfig({
   workers: 1,
   retries: 0,
   reporter: 'list',
-  timeout: 30_000,
+  timeout: 60_000,
   expect: { timeout: 10_000 },
   use: {
     ...devices['Desktop Chrome'],

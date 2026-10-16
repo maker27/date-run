@@ -55,8 +55,10 @@ test('expires a disconnected player and resets the round while both wait near th
     const { host, guest, roomId } = await setupPlaying(context, diagnostics, request);
     expect((await readSnapshot(request, roomId)).state.players.find(({ role }) => role === 'a')).toBeDefined();
     expect(await host.evaluate(() => window.__dateRunTest.attemptInteraction('gift-a'))).toBe('out_of_range');
-    await occupySwitch(host, request, roomId, 'a');
-    await occupySwitch(guest, request, roomId, 'b');
+    await Promise.all([
+      occupySwitch(host, request, roomId, 'a'),
+      occupySwitch(guest, request, roomId, 'b'),
+    ]);
     await waitForSnapshot(request, roomId, (snapshot) => snapshot.state.gateOpen);
 
     const connectionId = await host.evaluate(() => window.__dateRunTest.connectionId());
@@ -81,8 +83,10 @@ test('leaving beside the open gate returns the remaining player to a clean lobby
   const diagnostics: Array<() => void> = [];
   try {
     const { host, guest, roomId } = await setupPlaying(context, diagnostics, request);
-    await occupySwitch(host, request, roomId, 'a');
-    await occupySwitch(guest, request, roomId, 'b');
+    await Promise.all([
+      occupySwitch(host, request, roomId, 'a'),
+      occupySwitch(guest, request, roomId, 'b'),
+    ]);
     await waitForSnapshot(request, roomId, (snapshot) => snapshot.state.gateOpen);
     await host.getByRole('button', { name: 'Выйти' }).click();
     const reset = await waitForSnapshot(request, roomId, (snapshot) => snapshot.state.phase === 'lobby' && snapshot.state.players.length === 1);

@@ -1,6 +1,7 @@
 import { expect, type APIRequestContext, type BrowserContext, type Page } from '@playwright/test';
 import { WorldSnapshotSchema, type Role, type ThemeId, type WorldSnapshot } from '../../src/shared/model.js';
 import type { ServerMessage } from '../../src/shared/protocol.js';
+import { DECELERATION, MOVE_SPEED } from '../../src/shared/simulation-config.js';
 import { SHORT_LEVEL } from '../fixtures/short-level.js';
 
 type InteractionOutcome = Extract<ServerMessage, { type: 'world:interact:result' }>['outcome'];
@@ -197,17 +198,27 @@ export async function occupySwitch(page: Page, request: APIRequestContext, roomI
   expect(switchDefinition).toBeDefined();
   if (!switchDefinition) throw new Error(`Switch ${switchState.id} is missing from the level`);
   const targetX = switchDefinition.bounds.x + switchDefinition.bounds.width / 2 - 16;
-  const direction = player.body.x < targetX ? 'ArrowRight' : 'ArrowLeft';
-  await page.keyboard.down(direction);
-  try {
-    await expect.poll(async () => {
-      const snapshot = await readSnapshot(request, roomId);
-      return snapshot.state.switches.some(({ id, occupant }) => id === switchState.id && occupant === player.id);
-    }, { timeout: 10_000, intervals: [16, 20, 24] }).toBe(true);
-  } finally {
-    await page.keyboard.up(direction);
-  }
-  await waitForSnapshot(request, roomId, (snapshot) => snapshot.state.switches.some(({ id, occupant }) => id === switchState.id && occupant === player.id));
+  const brakingDistance = MOVE_SPEED * MOVE_SPEED / (2 * DECELERATION);
+  await expect.poll(async () => {
+    const snapshot = await readSnapshot(request, roomId);
+    const current = await playerForRole(snapshot, role);
+    if (current.body.vx === 0 && snapshot.state.switches.some(({ id, occupant }) =>
+      id === switchState.id && occupant === player.id)) return true;
+    const axis = current.body.x < targetX ? 1 : -1;
+    const direction = axis === 1 ? 'ArrowRight' : 'ArrowLeft';
+    await page.keyboard.down(direction);
+    try {
+      await page.waitForFunction(({ playerId, stopX, axis }) => {
+        const body = window.__dateRunTest.snapshot()?.state.players.find(({ id }) => id === playerId)?.body;
+        return body !== undefined && (body.x - stopX) * axis >= 0;
+      }, { playerId: player.id, stopX: targetX - axis * brakingDistance, axis });
+    } finally {
+      await page.keyboard.up(direction);
+    }
+    await page.waitForFunction((playerId) =>
+      window.__dateRunTest.snapshot()?.state.players.find(({ id }) => id === playerId)?.body.vx === 0, player.id);
+    return false;
+  }, { timeout: 30_000, intervals: [16, 20, 24] }).toBe(true);
 }
 
 export async function completeRound(
