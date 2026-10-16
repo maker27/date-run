@@ -1,7 +1,7 @@
 import { expect, type APIRequestContext, type BrowserContext, type Page } from '@playwright/test';
 import { WorldSnapshotSchema, type Role, type ThemeId, type WorldSnapshot } from '../../src/shared/model.js';
 import type { ServerMessage } from '../../src/shared/protocol.js';
-import { DECELERATION, MOVE_SPEED } from '../../src/shared/simulation-config.js';
+import { MOVE_SPEED, PLAYER_WIDTH } from '../../src/shared/simulation-config.js';
 import { SHORT_LEVEL } from '../fixtures/short-level.js';
 
 type InteractionOutcome = Extract<ServerMessage, { type: 'world:interact:result' }>['outcome'];
@@ -11,7 +11,9 @@ declare global {
     __dateRunTest: {
       snapshot(): WorldSnapshot | null;
       connectionId(): string;
+      nextInputSeq(): number;
       dropNext(type: 'room:complete' | 'world:update' | 'room:state'): void;
+      dropCompletionSnapshots(): void;
       setVisibility(state: DocumentVisibilityState): void;
       setStorageFailure(value: boolean): void;
       attemptInteraction(objectId: string): Promise<InteractionOutcome>;
@@ -118,7 +120,15 @@ export async function waitForSnapshot(
   predicate: (snapshot: WorldSnapshot) => boolean,
   timeout = 10_000,
 ): Promise<WorldSnapshot> {
-  await expect.poll(async () => predicate(await readSnapshot(request, roomId)), { timeout }).toBe(true);
+  let latest: WorldSnapshot | undefined;
+  try {
+    await expect.poll(async () => {
+      latest = await readSnapshot(request, roomId);
+      return predicate(latest);
+    }, { timeout }).toBe(true);
+  } catch (error) {
+    throw new Error(`Snapshot condition failed. Last server state: ${JSON.stringify(latest?.state)}`, { cause: error });
+  }
   return readSnapshot(request, roomId);
 }
 
@@ -164,6 +174,27 @@ export async function playerForRole(snapshot: WorldSnapshot, role: Role) {
   return player;
 }
 
+async function moveToX(page: Page, request: APIRequestContext, roomId: string, role: Role, targetX: number): Promise<void> {
+  await expect.poll(async () => {
+    const snapshot = await readSnapshot(request, roomId);
+    if (snapshot.state.phase === 'complete') return true;
+    const player = await playerForRole(snapshot, role);
+    const distance = targetX - player.body.x;
+    if (Math.abs(distance) <= 12 && player.body.vx === 0) return true;
+    const direction = distance > 0 ? 'ArrowRight' : 'ArrowLeft';
+    const duration = Math.min(300, Math.max(50, Math.abs(distance) / MOVE_SPEED * 1000));
+    await page.keyboard.press(direction, { delay: duration });
+    const nextSeq = await page.evaluate(() => window.__dateRunTest.nextInputSeq());
+    await expect.poll(async () => {
+      const current = await readSnapshot(request, roomId);
+      if (current.state.phase === 'complete') return true;
+      const own = current.state.players.find(({ id }) => id === player.id);
+      return own !== undefined && own.lastProcessedSeq >= nextSeq && own.body.vx === 0;
+    }, { timeout: 10_000, intervals: [16, 20, 24] }).toBe(true);
+    return false;
+  }, { timeout: 30_000, intervals: [16, 20, 24] }).toBe(true);
+}
+
 export async function collectOwnGift(page: Page, request: APIRequestContext, roomId: string, role: Role): Promise<void> {
   const initial = await readSnapshot(request, roomId);
   const player = await playerForRole(initial, role);
@@ -172,17 +203,7 @@ export async function collectOwnGift(page: Page, request: APIRequestContext, roo
   expect(gift).toBeDefined();
   expect(giftDefinition).toBeDefined();
   if (!gift || !giftDefinition) throw new Error(`Gift ${role} missing from the level or authoritative snapshot`);
-  const direction = role === 'a' ? 'ArrowRight' : 'ArrowLeft';
-  await page.keyboard.down(direction);
-  try {
-    await expect.poll(async () => {
-      const snapshot = await readSnapshot(request, roomId);
-      const current = snapshot.state.players.find(({ id }) => id === player.id);
-      return current ? Math.hypot(current.body.x + 16 - giftDefinition.position.x, current.body.y + 24 - giftDefinition.position.y) <= 40 : false;
-    }, { timeout: 10_000, intervals: [16, 20, 24] }).toBe(true);
-  } finally {
-    await page.keyboard.up(direction);
-  }
+  await moveToX(page, request, roomId, role, giftDefinition.position.x - PLAYER_WIDTH / 2);
   await page.keyboard.press('e');
   await waitForSnapshot(request, roomId, (snapshot) => snapshot.state.gifts.some(({ id, collectedBy }) => id === gift.id && collectedBy === player.id));
   await expect(page.getByRole('region', { name: 'Статус игры' })).toContainText('Ваш подарок собран');
@@ -197,28 +218,10 @@ export async function occupySwitch(page: Page, request: APIRequestContext, roomI
   const switchDefinition = SHORT_LEVEL.switches.find(({ id }) => id === switchState.id);
   expect(switchDefinition).toBeDefined();
   if (!switchDefinition) throw new Error(`Switch ${switchState.id} is missing from the level`);
-  const targetX = switchDefinition.bounds.x + switchDefinition.bounds.width / 2 - 16;
-  const brakingDistance = MOVE_SPEED * MOVE_SPEED / (2 * DECELERATION);
-  await expect.poll(async () => {
-    const snapshot = await readSnapshot(request, roomId);
-    const current = await playerForRole(snapshot, role);
-    if (current.body.vx === 0 && snapshot.state.switches.some(({ id, occupant }) =>
-      id === switchState.id && occupant === player.id)) return true;
-    const axis = current.body.x < targetX ? 1 : -1;
-    const direction = axis === 1 ? 'ArrowRight' : 'ArrowLeft';
-    await page.keyboard.down(direction);
-    try {
-      await page.waitForFunction(({ playerId, stopX, axis }) => {
-        const body = window.__dateRunTest.snapshot()?.state.players.find(({ id }) => id === playerId)?.body;
-        return body !== undefined && (body.x - stopX) * axis >= 0;
-      }, { playerId: player.id, stopX: targetX - axis * brakingDistance, axis }, { polling: 16 });
-    } finally {
-      await page.keyboard.up(direction);
-    }
-    await page.waitForFunction((playerId) =>
-      window.__dateRunTest.snapshot()?.state.players.find(({ id }) => id === playerId)?.body.vx === 0, player.id, { polling: 16 });
-    return false;
-  }, { timeout: 30_000, intervals: [16, 20, 24] }).toBe(true);
+  const targetX = switchDefinition.bounds.x + switchDefinition.bounds.width / 2 - PLAYER_WIDTH / 2;
+  await moveToX(page, request, roomId, role, targetX);
+  await waitForSnapshot(request, roomId, (snapshot) => snapshot.state.switches.some(({ id, occupant }) =>
+    id === switchState.id && occupant === player.id));
 }
 
 export async function completeRound(
@@ -254,28 +257,11 @@ export async function triggerCompletion(
   ]);
   await waitForSnapshot(request, roomId, (snapshot) => snapshot.state.gateOpen);
 
-  const approachFinish = async (page: Page, role: Role): Promise<void> => {
-    const snapshot = await readSnapshot(request, roomId);
-    const player = await playerForRole(snapshot, role);
-    const finishCenter = SHORT_LEVEL.finish.x + SHORT_LEVEL.finish.width / 2;
-    const direction = player.body.x + 16 < finishCenter ? 'ArrowRight' : 'ArrowLeft';
-    await page.keyboard.down(direction);
-    try {
-      await expect.poll(async () => {
-        const currentSnapshot = await readSnapshot(request, roomId);
-        const current = currentSnapshot.state.players.find(({ id }) => id === player.id);
-        if (!current) return false;
-        const centerX = current.body.x + 16;
-        const centerY = current.body.y + 28;
-        return centerX >= SHORT_LEVEL.finish.x && centerX <= SHORT_LEVEL.finish.x + SHORT_LEVEL.finish.width &&
-          centerY >= SHORT_LEVEL.finish.y && centerY <= SHORT_LEVEL.finish.y + SHORT_LEVEL.finish.height;
-      }, { timeout: 10_000, intervals: [16, 20, 24] }).toBe(true);
-    } finally {
-      await page.keyboard.up(direction);
-    }
-  };
-
-  await Promise.all([approachFinish(host, hostRole), approachFinish(guest, guestRole)]);
+  const finishX = SHORT_LEVEL.finish.x + SHORT_LEVEL.finish.width / 2 - PLAYER_WIDTH / 2;
+  await Promise.all([
+    moveToX(host, request, roomId, hostRole, finishX),
+    moveToX(guest, request, roomId, guestRole, finishX),
+  ]);
   await waitForSnapshot(request, roomId, (snapshot) => snapshot.state.phase === 'complete');
 }
 

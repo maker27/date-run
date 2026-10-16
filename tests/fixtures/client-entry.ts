@@ -46,11 +46,16 @@ const session = new GameSession({
   credentials,
   visibility,
 });
-
 window.__dateRunTest = {
   snapshot: () => transport.snapshot,
   connectionId: () => transport.connectionId(),
+  nextInputSeq: () => {
+    const credential = credentials.read();
+    if (!credential) throw new Error('No game credential');
+    return credential.nextSeq;
+  },
   dropNext: (type) => transport.dropNext(type),
+  dropCompletionSnapshots: () => transport.dropCompletion(),
   setVisibility: (state) => visibility.set(state),
   setStorageFailure: (value) => { storageFailure = value; },
   attemptInteraction: async (objectId) => {
@@ -76,7 +81,9 @@ declare global {
     __dateRunTest: {
       snapshot(): import('../../src/shared/model.js').WorldSnapshot | null;
       connectionId(): string;
+      nextInputSeq(): number;
       dropNext(type: 'room:complete' | 'world:update' | 'room:state'): void;
+      dropCompletionSnapshots(): void;
       setVisibility(state: DocumentVisibilityState): void;
       setStorageFailure(value: boolean): void;
       attemptInteraction(objectId: string): Promise<InteractionOutcome>;

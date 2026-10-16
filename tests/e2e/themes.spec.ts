@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures.js';
 import type { ThemeId } from '../../src/shared/model.js';
 import {
   assertNoBrowserIssues,

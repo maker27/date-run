@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures.js';
 import {
   allowExpected404,
   assertNoBrowserIssues,
@@ -12,7 +12,8 @@ import {
   waitForSnapshot,
 } from './helpers.js';
 
-test.afterEach(async ({ request }) => {
+test.afterEach(async ({ context, request }) => {
+  await context.close();
   await test.step('reset the test server', () =>
     controlPost(request, '/restart', {}, (value) => expect(value).toMatchObject({ status: 'restarted' })));
 });

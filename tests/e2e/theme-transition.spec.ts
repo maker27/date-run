@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures.js';
 import { controlPost, createRoom, joinRoom, startRound } from './helpers.js';
 
 test('keeps the scene dimensions and chosen theme when both players become ready', async ({ browser, request }) => {

@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures.js';
 import { assertNoBrowserIssues, controlPost, createRoom, joinRoom, newPage } from './helpers.js';
 
 test('opens an invitation instead of restoring another room and restores the invited room after reload', async ({ browser, request }) => {

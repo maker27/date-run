@@ -22,6 +22,7 @@ class ControlledSocket extends EventTarget implements ClientSocket {
           if (result.success) {
             const message = result.data;
             if (message.type === 'room:resynced') this.owner.lastResyncedInputGeneration = message.rejoinState.inputGeneration;
+            if (this.owner.dropCompletionSnapshots && 'snapshot' in message && message.snapshot.state.phase === 'complete') return;
             if (this.owner.dropType === message.type) {
               this.owner.dropType = null;
               return;
@@ -43,6 +44,7 @@ export class TestTransport {
   snapshot: WorldSnapshot | null = null;
   lastResyncedInputGeneration: number | null = null;
   dropType: string | null = null;
+  dropCompletionSnapshots = false;
   private current: ControlledSocket | null = null;
   private currentId: string | null = null;
 
@@ -61,4 +63,5 @@ export class TestTransport {
   }
 
   dropNext(type: string): void { this.dropType = type; }
+  dropCompletion(): void { this.dropCompletionSnapshots = true; }
 }

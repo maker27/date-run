@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures.js';
 import {
   assertNoBrowserIssues,
   collectOwnGift,
@@ -21,15 +21,15 @@ test('keeps both players on their switches when control snapshots arrive late', 
     const roomId = await createRoom(host, 'winter', 'a');
     await joinRoom(guest, roomId);
     await startRound(host, guest, request, roomId);
-    await Promise.all([
-      collectOwnGift(host, request, roomId, 'a'),
-      collectOwnGift(guest, request, roomId, 'b'),
-    ]);
     request.get = async (...args) => {
       const response = await get(...args);
       await new Promise<void>((resolve) => setTimeout(resolve, 450));
       return response;
     };
+    await Promise.all([
+      collectOwnGift(host, request, roomId, 'a'),
+      collectOwnGift(guest, request, roomId, 'b'),
+    ]);
     await Promise.all([
       occupySwitch(host, request, roomId, 'a'),
       occupySwitch(guest, request, roomId, 'b'),

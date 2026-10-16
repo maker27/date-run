@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures.js';
 import sharp from 'sharp';
 import { assertNoBrowserIssues, completeRound, controlPost, createRoom, joinRoom, newPage, startRound } from './helpers.js';
 

@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures.js';
 import { allowExpected404, assertNoBrowserIssues, controlPost, createRoom, newPage, watchBrowserIssues } from './helpers.js';
 
 test('allows one exact preview 404 and rejects another 404 inside the same active scope', async ({ browser, request }) => {
